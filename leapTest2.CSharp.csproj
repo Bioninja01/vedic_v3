@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C23C059D-5B0E-9A04-D47C-77215DA5748C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
+    <UnityVersion>5.3.6f1</UnityVersion>
+    <RootNamespace></RootNamespace>
+    <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_6;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_6;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_LOG_MIXED_STACKTRACE;ENABLE_UNITYWEBREQUEST;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="LeapCSharp.NET3.5">
+      <HintPath>Assets\Plugins\LeapCSharp.NET3.5.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\JamesVinson\ButtonSwitchText.cs" />
+    <Compile Include="Assets\JamesVinson\JamesV_LeapRTS.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Algorithms\SlidingMax.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Algorithms\SmoothedFloat.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Algorithms\SmoothedQuaternion.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Algorithms\SmoothedVector3.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Attributes\CombinablePropertyAttribute.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Attributes\DisableIf.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Attributes\EnumFlags.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Attributes\Incrementable.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Attributes\MaxValue.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Attributes\MinMax.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Attributes\MinValue.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Attributes\UnitsAttribute.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\DataStructures\RingBuffer.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\DetectionUtilities\Detector.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\DetectionUtilities\DetectorLogicGate.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\DetectionUtilities\ExtendedFingerDetector.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\DetectionUtilities\FingerDirectionDetector.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\DetectionUtilities\PalmDirectionDetector.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\DetectionUtilities\PinchDetector.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\DetectionUtilities\ProximityDetector.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\HandFactory.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\HandPool.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\HandProxy.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\HandRepresentation.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\CapsuleHand.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\DebugHand.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\FingerModel.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\HandDrop.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\HandEnableDisable.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\HandFader.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\HandModel.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\HandTransitionBehavior.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\IHandModel.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\RigidFinger.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\RigidHand.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\SkeletalFinger.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\SkeletalHand.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Hands\TestHandFactory.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\LeapDeviceInfo.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\LeapHandController.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\LeapImageRetriever.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\LeapProvider.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\LeapServiceProvider.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\DisconnectionNotice.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\EnableDepthBuffer.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\ExecutionOrder.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\FitHeightToScreen.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\FrameRateControls.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\KeyEnableBehaviors.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\KeyEnableGameObjects.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\LeapUnityExtensions.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\SceneSettings.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\StretchToScreen.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Utils\Utils.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\VR\EyeType.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\VR\LeapVRCameraControl.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\VR\LeapVRTemporalWarping.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\VR\TemporalWarpingStatus.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\VR\VRHeightOffset.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Attachments\Examples\Scripts\FireControl.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Attachments\Scripts\AttachmentController.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Attachments\Scripts\CameraFollower.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Attachments\Scripts\HandAttachments.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Attachments\Scripts\Transition.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\DetectionExamples\Scripts\LeapRTS.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\DetectionExamples\Scripts\MengerSponge.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\DetectionExamples\Scripts\PinchDraw.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\DetectionExamples\Scripts\SpawnBalls.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\UIInput\Extras\Cursor3D.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\UIInput\Scripts\CompressibleUI.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\UIInput\Scripts\ILeapWidget.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\UIInput\Scripts\LeapInputModule.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\UIInput\Scripts\PhysicsUI.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\UIInput\Scripts\Utilities\ScrollRectVolume.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\UIInput\Scripts\Utilities\SliderShadow.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\UIInput\Scripts\Utilities\SliderVolume.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\UIInput\Scripts\Utilities\ToggleToggler.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Button\ButtonBase.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Button\ButtonToggleBase.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\DemoScripts\ButtonDemoGraphics.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\DemoScripts\ButtonDemoToggle.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\DemoScripts\InputButton.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\DemoScripts\Input_NumButton.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\DemoScripts\OutputButton.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\DemoScripts\SliderDemo.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\DemoScripts\SliderDemoGraphics.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Dial\DatePickerHideVolume.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Dial\DialGraphics.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Dial\DialModeBase.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Dial\FadeTextByRotation.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Dial\HilightTextVolume.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Events\EventArg.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Interfaces\AnalogInteractionHandler.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Interfaces\BinaryInteractionHandler.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Interfaces\DataBinder.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Interfaces\IDataBoundWidget.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Physics\LeapPhysicsBase.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Physics\LeapPhysicsSpring.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Scroll\ScrollBase.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Slider\SliderBase.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\SliderActivationManager.cs" />
+    <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Ui_enum\ButtonType.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\InputButtonV2.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\OutputButtonV2.cs" />
+    <Compile Include="Assets\JamesVinson\UIMove_Tool.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_AlterQuery.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_CreateQuery.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_DB_Col.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_DB_Table.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_DataFactory.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_DeleteQuery.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_InsertQuery.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_MySql_Where.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_Query.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_SelectQuery.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_UpdateQuery.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_ObjContainer.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\ConectionTool.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\ConnectionToolV2.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\FunctionTool.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\Vid_TokenFactory.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_BasicCondition.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Branch.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Data.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Expression.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Function.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_NumVar.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Number.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Object.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_ObjectInputs.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Return.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_ReturnBool.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_SequenceableObject.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Variable.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\Condition_Type.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\MySql_colTypes.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\Query_Type.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\VidBool.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\VidData_Type.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\VidNum_Type.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\Vid_Prefix.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Inputable.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Stringifyable.cs" />
+    <Compile Include="Assets\RunBash.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\JamesVinson\LeapMotion\Dependencies.txt" />
+    <None Include="Assets\JamesVinson\LeapMotion\README_BEFORE_UPDATING.txt" />
+    <None Include="Assets\JamesVinson\LeapMotion\Resources\LeapCG.cginc" />
+    <None Include="Assets\JamesVinson\LeapMotion\Resources\PassthroughBackground.shader" />
+    <None Include="Assets\JamesVinson\LeapMotion\Resources\PassthroughForeground.shader" />
+    <None Include="Assets\JamesVinson\LeapMotion\Resources\ThresholdOverlay.shader" />
+    <None Include="Assets\JamesVinson\LeapMotion\Version.txt" />
+    <None Include="Assets\JamesVinson\LeapMotion\readme.txt" />
+    <None Include="Assets\JamesVinson\LeapMotionModules\DetectionExamples\Shaders\LeapPinchLine.shader" />
+    <None Include="Assets\JamesVinson\LeapMotionModules\Widgets\Shaders\SelfIllumAlpha.shader" />
+    <None Include="Assets\Plugins\donotdelete.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
+</Project>
