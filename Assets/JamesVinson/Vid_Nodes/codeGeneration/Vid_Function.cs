@@ -15,7 +15,7 @@ public class Vid_Function : Vid_Expression
     Dictionary<Vid_Prefix, string> prefix;
     List<String> parameters_names;
 
-    public new void Awake()
+    public override void Awake()
     {
         base.Awake();
         inputs = new Vid_ObjectInputs(numOfPrameters);

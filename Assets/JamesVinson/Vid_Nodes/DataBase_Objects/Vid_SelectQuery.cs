@@ -17,6 +17,13 @@ public class Vid_SelectQuery : Vid_Query
         isRepeted = false;
     }
 
+    public override void Awake() {
+        base.Awake();
+        acceptableInputs = new VidData_Type[2];
+            acceptableInputs[0] = VidData_Type.DATABASE_COL;
+            acceptableInputs[1] = VidData_Type.DATABASE_TABLE;
+    }
+
     public override void startStringify()
     {
         stringify(queryText);
@@ -54,7 +61,6 @@ public class Vid_SelectQuery : Vid_Query
         //    queryText = sb;
         //}
     }
-
     public string writeColumns()
     {
         StringBuilder sb = new StringBuilder();

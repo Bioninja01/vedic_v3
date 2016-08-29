@@ -9,7 +9,7 @@ public class Vid_Number : Vid_Object
     public VidNum_Type type = VidNum_Type.INT;
     public string data;
 
-    public new void Awake()
+    public override void Awake()
     {
         base.Awake();
         setUpOutput(data);

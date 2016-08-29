@@ -4,23 +4,20 @@ using System.Collections.Generic;
 using System;
 using System.Text;
 
-public class Vid_DB_Col : Vid_SequenceableObject {
+public class Vid_DB_Col : Vid_Object {
 
+    public string colName;
+
+    public MySql_colTypes type = MySql_colTypes.MYSQL_INT;
 
     private bool isSetable = false;
-    public string colName;
-    public MySql_colTypes type = MySql_colTypes.MYSQL_INT;
     private bool NotNull;
-    private int charvarNumber = 1;
+    private int charvar_Number = 1;
 
     public new void Awake() 
     {
         base.Awake();
         NotNull = false;
-    }
-
-    public override void stringify(StringBuilder targetString)
-    {
     }
 
     public void toggleMySql_ColType()
@@ -57,16 +54,16 @@ public class Vid_DB_Col : Vid_SequenceableObject {
         }
     }
 
-
+    /*Getters*/
     public bool isNotNull(){ return NotNull; }
     public string getColName() { return colName; }
-    public int getCarVarNumber() { return charvarNumber; }
+    public int getCarVarNumber() { return charvar_Number; }
     public bool getSetable() { return isSetable; }
 
-
+    /*Setters*/
     public void set_NotNull(bool b){this.NotNull = b; }
     public void setColName(string s){this.colName = s;}
-    public void setCarVarNumber(int i) { this.charvarNumber = i; }
+    public void setCarVarNumber(int i) { this.charvar_Number = i; }
     public void setSetable(bool b) {
         this.isSetable = b;
         if (b)

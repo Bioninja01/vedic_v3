@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vedic_v3.CSharp", "vedic_v3.CSharp.csproj", "{D11C44B5-B80E-5E23-7AFC-6E41B75CB3FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vedic_v3.CSharp.Editor", "vedic_v3.CSharp.Editor.csproj", "{7CDF9986-25B1-8144-6E8A-CC0BAFC95F83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D11C44B5-B80E-5E23-7AFC-6E41B75CB3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D11C44B5-B80E-5E23-7AFC-6E41B75CB3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D11C44B5-B80E-5E23-7AFC-6E41B75CB3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D11C44B5-B80E-5E23-7AFC-6E41B75CB3FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDF9986-25B1-8144-6E8A-CC0BAFC95F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDF9986-25B1-8144-6E8A-CC0BAFC95F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDF9986-25B1-8144-6E8A-CC0BAFC95F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDF9986-25B1-8144-6E8A-CC0BAFC95F83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

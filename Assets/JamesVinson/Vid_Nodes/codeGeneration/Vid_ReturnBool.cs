@@ -9,7 +9,7 @@ public class Vid_ReturnBool : Vid_Return
 
     public VidBool type;
 
-    public new void Awake()
+    public override void Awake()
     {
         base.Awake();
         inputs = new Vid_ObjectInputs(1);

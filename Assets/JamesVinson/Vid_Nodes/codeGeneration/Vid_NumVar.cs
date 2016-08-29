@@ -9,7 +9,7 @@ public class Vid_NumVar : Vid_Variable {
     public Vid_Number vid_number;
     public String varName;
 
-    public new void Awake()
+    public override void Awake()
     {
         base.Awake();
         vid_number.setUpOutput(varName);

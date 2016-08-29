@@ -5,7 +5,7 @@ public class Vid_BasicCondition : Vid_Object {
 
     public Condition_Type conditionType = Condition_Type.LESS;
 
-    public new void Awake()
+    public override void Awake()
     {
         base.Awake();
         acceptableInputs = new VidData_Type[2];

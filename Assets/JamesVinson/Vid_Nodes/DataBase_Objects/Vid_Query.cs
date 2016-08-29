@@ -7,9 +7,10 @@ using System.Text;
 public abstract class Vid_Query : Vid_Expression {
     public Vid_DB_Table table;
     public List<Vid_DB_Col> cols;
+
     public StringBuilder queryText;
 
-    public new void Awake()
+    public override void Awake()
     {
         base.Awake();
         cols = new List<Vid_DB_Col>();
@@ -39,6 +40,7 @@ public abstract class Vid_Query : Vid_Expression {
     {
         return queryText;
     }
+   
     //setters
     public void setTable(Vid_DB_Table table)
     {

@@ -6,7 +6,7 @@ using System.Text;
 
 public class Vid_Branch : Vid_SequenceableObject {
 
-    public new void Awake() 
+    public override void Awake() 
     {
         base.Awake();
         acceptableInputs = new VidData_Type[1];

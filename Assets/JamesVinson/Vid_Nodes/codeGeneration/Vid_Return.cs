@@ -5,7 +5,7 @@ public abstract class Vid_Return : Vid_SequenceableObject {
     public Vid_Prefix.Vid_returnValue returnType = Vid_Prefix.Vid_returnValue.VOID;
     FunctionTool ft;
 
-    public new void Awake() {
+    public override void Awake() {
         base.Awake();
         ft = FunctionTool.getInstance();
     }
