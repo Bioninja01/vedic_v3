@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
-using System;
 using System.Text;
 
 public abstract class Vid_Query : Vid_Expression {
@@ -13,11 +11,12 @@ public abstract class Vid_Query : Vid_Expression {
     public override void Awake()
     {
         base.Awake();
+        inputs = new Vid_ObjectInputs();
         cols = new List<Vid_DB_Col>();
     }
 
     //builders
-    public bool addValue(Vid_DB_Col c)
+    public bool addCol(Vid_DB_Col c)
     {
         if (c.getSetable())
         {
@@ -26,7 +25,7 @@ public abstract class Vid_Query : Vid_Expression {
         }
         else return false;
     }
-    public void removeValue(Vid_DB_Col c)
+    public void removeCol(Vid_DB_Col c)
     {
         cols.Remove(c);
     }

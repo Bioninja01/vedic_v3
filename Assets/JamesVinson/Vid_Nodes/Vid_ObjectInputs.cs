@@ -16,12 +16,22 @@ public class Vid_ObjectInputs {
 
     /*Builders*/
     public bool removeInput_atIndex(int index) {
+        /*Used for CodeGenereation*/
         if ((index > -1) && (index < maxsize)) {
             dataInputs[index] = null;
             return true;
         }
         return false;
     }
+    public bool removeInputData(Vid_Data d) {
+        /*Used for DBQuery_Genereation*/
+        if (!dataInputs.Contains(d)) { return false; }
+        else {
+            dataInputs.Remove(d);
+            return true;
+        }
+    }
+    
     /*Getters*/
     public Vid_Data getInput_atIndex(int index)
     {
@@ -35,12 +45,16 @@ public class Vid_ObjectInputs {
         }
         return null;
     }
+    public int getData_Index(Vid_Data d) {
+        return dataInputs.IndexOf(d);
+    }
     public bool isInputFull() {
         if (dataInputs.Count == maxsize) {
             return true;
         }
         return false;
     }
+   
     /*Setters*/
     public bool setInput_atIndex(Vid_Data data, int index) {
         if (maxsize == 0) {
