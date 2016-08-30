@@ -18,9 +18,8 @@ public abstract class Vid_Object : MonoBehaviour, Inputable
         tokenFactory = Vid_TokenFactory.getInstance();
     }
 
-    public virtual void updateData() {}
-
     /*Builder Functions*/
+    public virtual void updateData() { }
     public virtual bool addInput(Vid_Data data, int argumentIndex) {
         return inputs.setInput_atIndex(data,argumentIndex);
     }
@@ -30,7 +29,7 @@ public abstract class Vid_Object : MonoBehaviour, Inputable
         }
        return false;
     }
-
+   
     /* Getters */
     public virtual Vid_Data getOutput() { return output; }
     public VidData_Type[] getAcceptableInputs() {

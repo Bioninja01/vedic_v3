@@ -15,13 +15,19 @@ public class Vid_SelectQuery : Vid_Query
         isStar = true;
         isConditional = true;
         noRepeted = false;
+
+        queryText.Append("SELECT $col::PLACEHOLDER ");
+        queryText.Append("FROM $table::PLACEHOLDER ");
+        queryText.Append("$where::PLACEHOLDER");
+
+        output.setData(queryText.ToString());
     }
 
     public override void Awake() {
         base.Awake();
         acceptableInputs = new VidData_Type[3];
-            acceptableInputs[0] = VidData_Type.DATABASE_COL;
-            acceptableInputs[1] = VidData_Type.DATABASE_TABLE;
+            acceptableInputs[0] = VidData_Type.DATABASE_TABLE;
+            acceptableInputs[1] = VidData_Type.DATABASE_COL;
             acceptableInputs[2] = VidData_Type.DATABASE_WHERE;
     }
     
@@ -30,38 +36,28 @@ public class Vid_SelectQuery : Vid_Query
         stringify(queryText);
     }
     public override void stringify(StringBuilder targetString) {
-        StringBuilder sb = new StringBuilder();
-        sb.Append("SELECT ");
-
-        if (noRepeted) {
-            sb.Append("DISTINCT ");
-        }
-        if (base.cols.Count == 0) {
-            sb.Append("* ");
-        }
-        else {
-            sb.Append(writeColumns());
-        }
-        sb.Append("FROM " + table.tableName + " ");
-
-        if (isConditional && (base.sequence != null)) {
-            sb.Append(" " + tokenFactory.generateToken() + " ");
-            sb.Append(";");
-            queryText = sb;
-            //base.sequence.stringify(queryText);
-        }
-        else {
-            sb.Append(";");
-            queryText = sb;
-        }
+        updateData();
     }
 
     /*Builder functions*/
+    public override void updateData() {
+        StringBuilder sb = new StringBuilder();
+        sb.Append("SELECT "+ writeColumns()+" ");
+        sb.Append("FROM $table::PLACEHOLDER ");
+        sb.Append("$where::PLACEHOLDER ;");
+        queryText = sb;
+    }
+
     public override bool addInput(Vid_Data data, int argumentIndex) {
         switch (data.getVidData_type()) {
             case VidData_Type.DATABASE_COL:
-                base.addInput(data, argumentIndex);
-                addCol( (Vid_DB_Col) data.getVid_object());
+                Vid_DB_Col c = (Vid_DB_Col)data.getVid_object();
+                addCol(c);
+                Vid_Data d = new Vid_Data(VidData_Type.DATABASE_COL);
+                d.setData(cols.Count.ToString());
+                if (!base.addInput(data, argumentIndex)) {
+                    removeCol(c);
+                }
                 break;
             case VidData_Type.DATABASE_TABLE:
                 base.addInput(data, argumentIndex);
@@ -98,14 +94,19 @@ public class Vid_SelectQuery : Vid_Query
     {
         StringBuilder sb = new StringBuilder();
         int count = 0;
+        bool startFlag = true;
         foreach (Vid_DB_Col c in cols)
         {
+            startFlag = false;
             sb.Append(c.getColName());
             if (count < cols.Count - 1)
             {
                 sb.Append(", ");
                 count++;
             }
+        }
+        if (startFlag) {
+            sb.Append("* ");
         }
         return sb.ToString();
     }

@@ -18,8 +18,10 @@ public class Vid_DB_Col : Vid_Object {
     {
         base.Awake();
         NotNull = false;
+        acceptableInputs = new VidData_Type[2];
+            acceptableInputs[0] = VidData_Type.DATABASE_COL;
+            acceptableInputs[1] = VidData_Type.DATABASE_TABLE;
     }
-
     public void toggleMySql_ColType()
     {
         switch (type)
@@ -54,6 +56,24 @@ public class Vid_DB_Col : Vid_Object {
         }
     }
 
+    public override bool addInput(Vid_Data data, int argumentIndex) {
+        switch (data.getVidData_type()) {
+            case VidData_Type.DATABASE_QUERY:
+                Vid_Query q = (Vid_Query)data.getVid_object();
+                q.addCol(this);
+                q.formatColData();
+                base.addInput(data, argumentIndex);
+                break;
+        }
+        return false;
+    }
+
+    public override void updateData() {
+        Vid_Object obj = base.inputs.getInput_atIndex(0).getVid_object();
+        if(obj != null) {
+            obj.updateData();
+        }
+    }
     /*Getters*/
     public bool isNotNull(){ return NotNull; }
     public string getColName() { return colName; }

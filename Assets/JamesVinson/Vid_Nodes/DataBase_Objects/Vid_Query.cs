@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using System.Text;
 
 public abstract class Vid_Query : Vid_Expression {
+
     public Vid_DB_Table table;
     public List<Vid_DB_Col> cols;
 
     public StringBuilder queryText;
+    public string t;
 
     public override void Awake()
     {
         base.Awake();
         inputs = new Vid_ObjectInputs();
         cols = new List<Vid_DB_Col>();
+        output = new Vid_Data(VidData_Type.DATABASE_QUERY, this);
     }
+
+    public virtual void formatColData() { }
 
     //builders
     public bool addCol(Vid_DB_Col c)
