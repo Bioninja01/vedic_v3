@@ -67,7 +67,7 @@ public class InputButton : NodeButton {
         }
     }
 
-    private void transferData()
+   private void transferData()
     {
         VidData_Type[] output_dataType = vidObj.getAcceptableInputs();
         output = ct.getOutputButton();
@@ -76,7 +76,6 @@ public class InputButton : NodeButton {
             if (d == output.vid_obj.getOutput().getVidData_type())
             {
                 ct.setInputButton(this);
-                output.getAction(0);
                 output.setIsUse(false);
 
                 Vid_Data data4Input = output.vid_obj.getOutput();

@@ -13,7 +13,6 @@ public abstract class Vid_Query : Vid_Expression {
     public override void Awake()
     {
         base.Awake();
-        inputs = new Vid_ObjectInputs();
         cols = new List<Vid_DB_Col>();
         output = new Vid_Data(VidData_Type.DATABASE_QUERY, this);
     }

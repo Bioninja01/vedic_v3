@@ -167,15 +167,16 @@
     <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Slider\SliderBase.cs" />
     <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\SliderActivationManager.cs" />
     <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Ui_enum\ButtonType.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\ButtonAdder.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\InputButton.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\MultiInputButton.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\NodeButton.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\OutputButton.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\TerminalController.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\Vid_ObjContainer.cs" />
     <Compile Include="Assets\JamesVinson\PlayerMovement.cs" />
+    <Compile Include="Assets\JamesVinson\Test_L.cs" />
     <Compile Include="Assets\JamesVinson\UIMove_Tool.cs" />
-    <Compile Include="Assets\JamesVinson\Vid_Actions\OutButton_Action.cs" />
-    <Compile Include="Assets\JamesVinson\Vid_Actions\Vid_Action.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_AlterQuery.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_CreateQuery.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_DB_Col.cs" />
@@ -187,9 +188,9 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_Query.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_SelectQuery.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_UpdateQuery.cs" />
-    <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Array.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Data.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Expression.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_MultiInput.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Object.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_ObjectInputs.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_SequenceableObject.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\VidNum_Type.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\Vid_Prefix.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Inputable.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Resizeable.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Stringifyable.cs" />
     <Compile Include="Assets\RunBash.cs" />
   </ItemGroup>

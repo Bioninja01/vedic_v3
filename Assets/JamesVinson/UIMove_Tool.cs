@@ -4,7 +4,9 @@ using Leap.Unity;
 
 public class UIMove_Tool : MonoBehaviour {
     GameObject holding;
+
     public JamesV_LeapRTS rts;
+    public TerminalController tc;
 
     void Awake()
     {
@@ -33,12 +35,14 @@ public class UIMove_Tool : MonoBehaviour {
             if (obj2hold != holding)
             {
                 setNewHolder(obj2hold);
-                return;
             }
             else
             {
                 holding = null;
             }
+        }
+        if(holding != null) {
+            tc.updateText(holding);
         }
     }
 
@@ -61,7 +65,6 @@ public class UIMove_Tool : MonoBehaviour {
             i.color = Color.green;
         }
     }
-
     private void deActivateHolder()
     {
         Vid_ObjContainer com;

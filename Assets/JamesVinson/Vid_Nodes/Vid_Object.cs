@@ -6,7 +6,6 @@ using System.Text;
 
 public abstract class Vid_Object : MonoBehaviour, Inputable
 {
-
     protected Vid_ObjectInputs inputs;
     protected Vid_Data output;
     protected VidData_Type[] acceptableInputs;
