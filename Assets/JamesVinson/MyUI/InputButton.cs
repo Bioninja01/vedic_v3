@@ -27,7 +27,6 @@ public class InputButton : NodeButton {
             {
                 case ButtonType.INPUT_DATA:
                     vidObj.removeInput(argumentIndex);
-                    vidObj.updateData();
                     break;
                 case ButtonType.INPUT_SEQUENCE:
                     output.removeSequence();
@@ -69,18 +68,17 @@ public class InputButton : NodeButton {
 
    private void transferData()
     {
-        VidData_Type[] output_dataType = vidObj.getAcceptableInputs();
+        VidData_Type[] acceptable_dataTypes = vidObj.getAcceptableInputs();
         output = ct.getOutputButton();
-        foreach (VidData_Type d in output_dataType)
+        Vid_Object outputObj = output.vid_obj;
+        foreach (VidData_Type d in acceptable_dataTypes)
         {
-            if (d == output.vid_obj.getOutput().getVidData_type())
+            if (d == outputObj.output_dataType)
             {
                 ct.setInputButton(this);
                 output.setIsUse(false);
 
-                Vid_Data data4Input = output.vid_obj.getOutput();
-                vidObj.addInput(data4Input, argumentIndex);
-                vidObj.updateData();
+                vidObj.addInput(outputObj, argumentIndex);
 
                 used = true;
                 drawline = true;

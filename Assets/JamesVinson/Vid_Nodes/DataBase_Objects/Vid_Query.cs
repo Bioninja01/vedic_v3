@@ -14,7 +14,6 @@ public abstract class Vid_Query : Vid_Expression {
     {
         base.Awake();
         cols = new List<Vid_DB_Col>();
-        output = new Vid_Data(VidData_Type.DATABASE_QUERY, this);
     }
 
     public virtual void formatColData() { }

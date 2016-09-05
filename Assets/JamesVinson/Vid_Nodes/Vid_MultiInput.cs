@@ -5,33 +5,31 @@ using System;
 
 public class Vid_MultiInput : Vid_Object {
 
-    public VidData_Type typeOfInputs;
+ 
     int inputSize = 1;
 
     public Vid_MultiInput(){
-        typeOfInputs = VidData_Type.NUM;
+        output_dataType = VidData_Type.NUM;
     }
 
     public override void Awake() {
         base.Awake();
         acceptableInputs = new VidData_Type[1];
-            acceptableInputs[0] = typeOfInputs;
+            acceptableInputs[0] = output_dataType;
         inputs = new Vid_ObjectInputs(inputSize);
-        output = new Vid_Data(typeOfInputs, this);
-        output.setData("");
     }
 
-    public override bool addInput(Vid_Data data, int index) {
-        if (data.getVidData_type() == typeOfInputs ) {
-            base.addInput(data, index);
+    public override string ToString() {
+        return writeInputs();
+    }
+
+    /*Builder functions*/
+    public override bool addInput(Vid_Object obj, int index) {
+        if (obj.output_dataType == output_dataType) {
+            base.addInput(obj, index);
         }
         return false;
     }
-
-    public override void updateData() {
-        output.setData(writeInputs());
-    }
-
     public void incromentInputs() {
         inputSize++;
         Vid_ObjectInputs newInputs = new Vid_ObjectInputs(inputSize);
@@ -50,13 +48,14 @@ public class Vid_MultiInput : Vid_Object {
         }
         inputs = newInputs;
     }
+    
     /*Helper functions*/
     private string writeInputs() {
         StringBuilder sb = new StringBuilder("");
         for (int i =0; i<inputs.getSize();i++) {
-            Vid_Data d = inputs.getInput_atIndex(i);
-            if (d != null) {
-                sb.Append(d.getData());
+            Vid_Object obj = inputs.getInput_atIndex(i);
+            if (obj != null) {
+                sb.Append(obj.ToString());
                 if (i < inputs.getSize() - 1) {
                     sb.Append(", ");
                 }

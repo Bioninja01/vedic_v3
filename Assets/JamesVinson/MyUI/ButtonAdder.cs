@@ -13,7 +13,7 @@ public class ButtonAdder : MonoBehaviour {
     public void addButton_toLayout() {
         RectTransform rt =(RectTransform)Instantiate(button, new Vector3(0, 0, 0), Quaternion.identity);
         InputButton input = rt.GetComponent<InputButton>();
-        input.input_dataType = mInput.typeOfInputs;
+        input.input_dataType = mInput.output_dataType;
         input.vidObj = mInput;
         rt.SetParent(layout.transform,false);
         buttons.Add(rt);

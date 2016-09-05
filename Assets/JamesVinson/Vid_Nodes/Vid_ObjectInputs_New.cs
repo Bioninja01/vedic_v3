@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
+using System.Collections;
 
-public class Vid_ObjectInputs {
+public class Vid_ObjectInputs_New : MonoBehaviour {
     int maxsize;
     public Vid_Object[] inputs;
-    
-    public Vid_ObjectInputs(int numOf_Inputs)
-    {
+
+    public Vid_ObjectInputs_New(int numOf_Inputs) {
         maxsize = numOf_Inputs;
         inputs = new Vid_Object[numOf_Inputs];
     }
@@ -14,18 +13,16 @@ public class Vid_ObjectInputs {
     /*Builders*/
     public bool removeInput_atIndex(int index) {
         /*Used for CodeGenereation*/
-        if(inputs == null) { return false; }
-
+        if (inputs == null) { return false; }
         if ((index > -1) && (index < maxsize)) {
             inputs[index] = null;
             return true;
         }
         return false;
     }
-    
+
     /*Getters*/
-    public Vid_Object getInput_atIndex(int index)
-    {
+    public Vid_Object getInput_atIndex(int index) {
         if (inputs == null) { return null; }
         if (index > -1 && index < maxsize) {
             return inputs[index];
@@ -35,7 +32,7 @@ public class Vid_ObjectInputs {
     public int getSize() {
         return maxsize;
     }
-  
+
     /*Setters*/
     public bool setInput_atIndex(Vid_Object obj, int index) {
         if (inputs == null) { return false; }

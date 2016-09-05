@@ -12,23 +12,41 @@ public class Vid_Number : Vid_Object
     public override void Awake()
     {
         base.Awake();
-        setUpOutput(data);
+        output_dataType = VidData_Type.NUM;
     }
 
-    private string vidNumType_String()
-    {
-        switch (type)
-        {
+    public override string ToString() {
+        return data;
+    }
+
+    public void toggleNum_type() {
+        switch (type) {
             case VidNum_Type.INT:
-                return "int";
+                type = VidNum_Type.FLOAT;
+                if (!setData(data)) {
+                    type = VidNum_Type.INT;
+                }
+                break;
             case VidNum_Type.FLOAT:
-                return "float";
+                type = VidNum_Type.DOUBLE;
+                if (!setData(data)) {
+                    type = VidNum_Type.FLOAT;
+                }
+                break;
             case VidNum_Type.DOUBLE:
-                return "double";
+                type = VidNum_Type.LONG;
+                if (!setData(data)) {
+                    type = VidNum_Type.DOUBLE;
+                }
+                break;
             case VidNum_Type.LONG:
-                return "long";
+                type = VidNum_Type.INT;
+                if (!setData(data)) {
+                    type = VidNum_Type.LONG;
+                }
+                break;
             default:
-                return "int";
+                break;
         }
     }
     public bool setData(String value)
@@ -39,56 +57,48 @@ public class Vid_Number : Vid_Object
                 try
                 {
                     int i = int.Parse(value);
-                    output.setData(i.ToString());
+                    data = i.ToString();
                     return true;
                 }
-                catch (FormatException e) { }
+                catch (FormatException e) { Debug.Log(e.ToString()); }
                 return false;
             case VidNum_Type.FLOAT:
                 try
                 {
                     float f = float.Parse(value);
-                    output.setData(f.ToString());
+                    data = f.ToString() +"F";
                     return true;
                 }
-                catch (FormatException e) { }
+                catch (FormatException e) { Debug.Log(e.ToString()); }
                 return false;
             case VidNum_Type.DOUBLE:
                 try
                 {
                     double d = double.Parse(value);
-                    output.setData(d.ToString());
+                    data = d.ToString() +"D";
                     return true;
                 }
-                catch (FormatException e) { }
+                catch (FormatException e) { Debug.Log(e.ToString()); }
                 return false;
             case VidNum_Type.LONG:
                 try
                 {
                     long l = long.Parse(value);
-                    output.setData(l.ToString());
+                    data = l.ToString()+"L";
                     return true;
                 }
-                catch (FormatException e) { }
+                catch (FormatException e) { Debug.Log(e.ToString()); }
                 return false;
             default:
                 try
                 {
                     int i = int.Parse(value);
-                    output.setData(i.ToString());
+                    data = i.ToString();
                     return true;
                 }
-                catch (FormatException e) { }
+                catch (FormatException e) { Debug.Log(e.ToString()); }
                 return false;
         }
     }
 
-    public void setUpOutput(String data)
-    {
-        Vid_Data outputData = new Vid_Data(VidData_Type.NUM, this);
-        outputData.setData(data);
-        Dictionary<string, string> metaData = outputData.getMetaData();
-        metaData.Add("number_type", vidNumType_String());
-        output = outputData;
-    }
 }

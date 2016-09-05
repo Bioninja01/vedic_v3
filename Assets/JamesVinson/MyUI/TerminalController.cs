@@ -17,12 +17,12 @@ public class TerminalController : MonoBehaviour {
             Debug.Log("this is a test");
         }
         else {
-            terminalText.text = vidObj.getOutput().getData();
+            terminalText.text = vidObj.ToString();
         }
     }
 
     public void updateText() {
         vidObj = holding.GetComponentInChildren<Vid_Object>();
-        terminalText.text = vidObj.getOutput().getData();
+        terminalText.text = vidObj.ToString();
     }
 }

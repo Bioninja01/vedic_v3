@@ -8,68 +8,61 @@ public class Vid_BasicCondition : Vid_Object {
     public override void Awake()
     {
         base.Awake();
+        inputs = new Vid_ObjectInputs(2);
         acceptableInputs = new VidData_Type[2];
             acceptableInputs[0] = VidData_Type.BOOL;
             acceptableInputs[1] = VidData_Type.NUM;
-        vidObject_SetUP();
+        base.output_dataType = VidData_Type.BOOL;
     }
 
-    public override void updateData() {
+    public override string ToString() {
         StringBuilder sb = new StringBuilder();
-        if (inputs.getInput_atIndex(0) == null 
+        if (inputs.getInput_atIndex(0) == null
                 || inputs.getInput_atIndex(1) == null) {
             sb.Append("null");
         }
         else {
             switch (conditionType) {
                 case Condition_Type.LESS:
-                    sb.Append("( " + inputs.getInput_atIndex(0).getData());
-                    sb.Append(" <" + inputs.getInput_atIndex(1).getData() + " )");
+                    sb.Append("( " + inputs.getInput_atIndex(0).ToString());
+                    sb.Append(" <" + inputs.getInput_atIndex(1).ToString() + " )");
 
                     break;
                 case Condition_Type.LESS_EQU:
-                    sb.Append("( " + inputs.getInput_atIndex(0).getData());
-                    sb.Append(" <=" + inputs.getInput_atIndex(1).getData() + " )");
+                    sb.Append("( " + inputs.getInput_atIndex(0).ToString());
+                    sb.Append(" <=" + inputs.getInput_atIndex(1).ToString() + " )");
                     break;
                 case Condition_Type.GREATER:
-                    sb.Append("( " + inputs.getInput_atIndex(0).getData());
-                    sb.Append(" >" + inputs.getInput_atIndex(1).getData() + " )");
+                    sb.Append("( " + inputs.getInput_atIndex(0).ToString());
+                    sb.Append(" >" + inputs.getInput_atIndex(1).ToString() + " )");
                     break;
                 case Condition_Type.GREATER_EQU:
-                    sb.Append("( " + inputs.getInput_atIndex(0).getData());
-                    sb.Append(" >=" + inputs.getInput_atIndex(1).getData() + " )");
+                    sb.Append("( " + inputs.getInput_atIndex(0).ToString());
+                    sb.Append(" >=" + inputs.getInput_atIndex(1).ToString() + " )");
                     break;
                 case Condition_Type.EQU:
-                    sb.Append("( " + inputs.getInput_atIndex(0).getData());
-                    sb.Append(" ==" + inputs.getInput_atIndex(1).getData() + " )");
+                    sb.Append("( " + inputs.getInput_atIndex(0).ToString());
+                    sb.Append(" ==" + inputs.getInput_atIndex(1).ToString() + " )");
                     break;
                 case Condition_Type.NOT_EQU:
-                    sb.Append("( " + inputs.getInput_atIndex(0).getData());
-                    sb.Append(" !=" + inputs.getInput_atIndex(1).getData() + " )");
+                    sb.Append("( " + inputs.getInput_atIndex(0).ToString());
+                    sb.Append(" !=" + inputs.getInput_atIndex(1).ToString() + " )");
                     break;
                 default:
                     break;
             }
         }
-        output.setData(sb.ToString());
+        return sb.ToString();
     }
 
-    public override bool addInput(Vid_Data data, int index)
+    /*Builder functions*/
+    public override bool addInput(Vid_Object obj, int index)
     {
-        if (data.getVidData_type() == VidData_Type.BOOL
-                || data.getVidData_type() == VidData_Type.NUM)
+        if (obj.output_dataType == VidData_Type.BOOL
+                || obj.output_dataType == VidData_Type.NUM)
         {
-            base.addInput(data,index);
+            base.addInput(obj,index);
         }
         return false;
     }
-
-    /*Helper functions*/
-    private void vidObject_SetUP()
-    {
-        inputs = new Vid_ObjectInputs(2);
-        output = new Vid_Data(VidData_Type.BOOL, this);
-        output.setData("null");
-    }
-
 }

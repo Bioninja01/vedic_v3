@@ -1,12 +1,8 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
-using System;
+﻿using System;
 using System.Text;
 
 public class Vid_ReturnBool : Vid_Return
 {
-
     public VidBool type;
 
     public override void Awake()
@@ -16,21 +12,36 @@ public class Vid_ReturnBool : Vid_Return
         returnType = Vid_Prefix.Vid_returnValue.BOOL;
     }
 
-    public override bool addInput(Vid_Data data,int index)
+    public override string ToString() {
+        StringBuilder sb = new StringBuilder();
+        if (inputs.getInput_atIndex(0) != null) {
+            sb.Append("return " + inputs.getInput_atIndex(0).ToString() + ";");
+
+        }
+        else if (type == VidBool.TRUE) {
+            sb.Append("return true;");
+        }
+        else {
+            sb.Append("return false;");
+        }
+        return sb.ToString();
+    }
+
+    /*Builder functions*/
+    public override bool addInput(Vid_Object obj,int index)
     {
-        if (data.getVidData_type() == VidData_Type.BOOL)
+        if (obj.output_dataType == VidData_Type.BOOL)
         {
-            return base.addInput(data,index);
+            return base.addInput(obj,index);
         }
         return false;
     }
-
     public override void stringify(StringBuilder targetString)
     {
         StringBuilder sb = new StringBuilder();   
         if(inputs.getInput_atIndex(0) != null)
         {
-            sb.Append("return " + inputs.getInput_atIndex(0).getData() + ";");
+            sb.Append("return " + inputs.getInput_atIndex(0).ToString() + ";");
 
         }
         else if(type == VidBool.TRUE)

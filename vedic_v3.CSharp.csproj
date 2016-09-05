@@ -193,6 +193,7 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_MultiInput.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Object.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_ObjectInputs.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_ObjectInputs_New.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_SequenceableObject.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\ConnectionTool.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\FunctionTool.cs" />
@@ -200,7 +201,6 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_BasicCondition.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Branch.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Function.cs" />
-    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_NumVar.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Number.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Return.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_ReturnBool.cs" />

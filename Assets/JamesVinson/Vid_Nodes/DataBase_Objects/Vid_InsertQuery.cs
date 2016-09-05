@@ -30,7 +30,7 @@ public class Vid_InsertQuery : Vid_Query
 
         foreach (Vid_DB_Col c in cols)
         {
-            sb.Append(c.colName + " = " + c.getOutput().getData());
+            sb.Append(c.colName + " = " + c.ToString());
             if (count < cols.Count - 1)
             {
                 sb.Append(", ");

@@ -7,8 +7,8 @@ using System.Text;
 public abstract class Vid_Object : MonoBehaviour, Inputable
 {
     protected Vid_ObjectInputs inputs;
-    protected Vid_Data output;
     protected VidData_Type[] acceptableInputs;
+    public VidData_Type output_dataType;
 
     protected Vid_TokenFactory tokenFactory;
 
@@ -16,11 +16,10 @@ public abstract class Vid_Object : MonoBehaviour, Inputable
     {
         tokenFactory = Vid_TokenFactory.getInstance();
     }
-
     /*Builder Functions*/
     public virtual void updateData() { }
-    public virtual bool addInput(Vid_Data data, int argumentIndex) {
-        return inputs.setInput_atIndex(data,argumentIndex);
+    public virtual bool addInput(Vid_Object obj, int argumentIndex) {
+        return inputs.setInput_atIndex(obj,argumentIndex);
     }
     public virtual bool removeInput( int argumentIndex) {
         if(inputs != null) {
@@ -30,7 +29,6 @@ public abstract class Vid_Object : MonoBehaviour, Inputable
     }
    
     /* Getters */
-    public virtual Vid_Data getOutput() { return output; }
     public VidData_Type[] getAcceptableInputs() {
         return acceptableInputs;
     }

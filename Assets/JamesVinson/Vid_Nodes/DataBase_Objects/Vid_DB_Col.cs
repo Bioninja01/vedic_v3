@@ -8,17 +8,20 @@
     private bool NotNull;
     private int charvar_Number = 1;
 
+
     public new void Awake() 
     {
         base.Awake();
+        base.output_dataType = VidData_Type.DATABASE_COL;
         NotNull = false;
-        output = new Vid_Data(VidData_Type.DATABASE_COL);
-        output.setData(colName);
     }
-    public void toggleMySql_ColType()
-    {
-        switch (type)
-        {
+
+    public override string ToString() {
+        return colName;
+    }
+
+    public void toggleMySql_ColType() {
+        switch (type) {
             case MySql_colTypes.MYSQL_INT:
                 type = MySql_colTypes.MYSQL_FLOAT;
                 break;
@@ -49,9 +52,6 @@
         }
     }
 
-    public override void updateData() {
-        output.setData(colName);
-    }
     /*Getters*/
     public bool isNotNull(){ return NotNull; }
     public int getCarVarNumber() { return charvar_Number; }
@@ -62,14 +62,5 @@
     public void setCarVarNumber(int i) { this.charvar_Number = i; }
     public void setSetable(bool b) {
         this.isSetable = b;
-        if (b)
-        {
-            output = new Vid_Data(VidData_Type.DATABASE_COL, this);
-            output.setData("value");
-        }
-        else
-        {
-            output = null;
-        }
     }
 }

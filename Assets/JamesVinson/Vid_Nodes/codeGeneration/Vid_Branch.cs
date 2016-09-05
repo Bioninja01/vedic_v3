@@ -14,12 +14,39 @@ public class Vid_Branch : Vid_SequenceableObject {
         inputs = new Vid_ObjectInputs(1);
         sequence = new Vid_SequenceableObject[2];
     }
-    public override void stringify(StringBuilder targetString)
+
+    public override string ToString() {
+        StringBuilder sb = new StringBuilder();
+        if (inputs.getInput_atIndex(0) == null) {
+            sb.Append("null");
+        }
+        else {
+            sb.Append("if( " + inputs.getInput_atIndex(0).ToString() + " ){ \n");
+            sb.Append(tokenFactory.generateToken() + "\n");
+            sb.Append("} \n");
+
+
+            sb.Append("else{ \n");
+            sb.Append(tokenFactory.generateToken() + "\n");
+            sb.Append("} \n");
+        }
+        return sb.ToString();
+    }
+
+    /*Builder functions*/
+    public override bool addInput(Vid_Object obj, int index)
     {
+        if (obj.output_dataType == VidData_Type.BOOL)
+        {
+            return inputs.setInput_atIndex(obj, index);
+        }
+        return false;
+    }
+    public override void stringify(StringBuilder targetString) {
         // personal text
         StringBuilder sb = new StringBuilder();
 
-        sb.Append("if( " + inputs.getInput_atIndex(0).getData() + " ){ \n");
+        sb.Append("if( " + inputs.getInput_atIndex(0).ToString() + " ){ \n");
         sb.Append(tokenFactory.generateToken() + "\n");
         sb.Append("} \n");
 
@@ -33,41 +60,7 @@ public class Vid_Branch : Vid_SequenceableObject {
 
         Debug.Log(targetString.ToString());
         targetString.Replace(token, sb.ToString());
-           
-        //if (sequence != null)
-        //{
-        //    sequence.stringify(targetString);
-        //}
-        //if (sequence2 != null)
-        //{
-        //    sequence.stringify(targetString);
-        //}
+
     }
 
-    public override void updateData() {
-        StringBuilder sb = new StringBuilder();
-        if (inputs.getInput_atIndex(0) == null) {
-            sb.Append("null");
-        }
-        else {
-            sb.Append("if( " + inputs.getInput_atIndex(0).getData() + " ){ \n");
-            sb.Append(tokenFactory.generateToken() + "\n");
-            sb.Append("} \n");
-
-
-            sb.Append("else{ \n");
-            sb.Append(tokenFactory.generateToken() + "\n");
-            sb.Append("} \n");
-        }
-        output.setData(sb.ToString());
-    }
-
-    public override bool addInput(Vid_Data data, int index)
-    {
-        if (data.getVidData_type() == VidData_Type.BOOL)
-        {
-            return inputs.setInput_atIndex(data, index);
-        }
-        return false;
-    }
 }
