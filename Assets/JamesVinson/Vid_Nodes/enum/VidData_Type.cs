@@ -10,5 +10,13 @@ public enum  VidData_Type {
     NUM,
     CLASS,
     FUNCTION,
-    IMPORT
+    IMPORT,
+    /*NEW ENUMS: I AM GOINF TO SWITCH TO THEM*/
+    BLOCK,
+    DECLAR_CON,
+    DECLAR_VAR,
+    STATMENT,
+    CONDITION,
+    EXPRESSION,
+    IDENT
 }

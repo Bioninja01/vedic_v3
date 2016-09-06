@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
-using System;
-using System.Text;
 
 public abstract class Vid_Object : MonoBehaviour, Inputable
 {
     protected Vid_ObjectInputs inputs;
     protected VidData_Type[] acceptableInputs;
     public VidData_Type output_dataType;
+
 
     protected Vid_TokenFactory tokenFactory;
 
