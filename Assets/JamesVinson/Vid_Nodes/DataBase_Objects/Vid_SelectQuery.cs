@@ -19,6 +19,7 @@ public class Vid_SelectQuery : Vid_Query
 
     public override void Awake() {
         base.Awake();
+        base.output_dataType = VidData_Type.DATABASE_TABLE;
         inputs = new Vid_ObjectInputs(3);
         acceptableInputs = new VidData_Type[3];
             acceptableInputs[0] = VidData_Type.DATABASE_TABLE;
