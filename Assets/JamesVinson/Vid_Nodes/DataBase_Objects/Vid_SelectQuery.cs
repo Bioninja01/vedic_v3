@@ -6,13 +6,12 @@ using System.Text;
 
 public class Vid_SelectQuery : Vid_Query
 {
-    public bool isStar;
+
     public bool noRepeted;
     public bool isConditional;
 
     public Vid_SelectQuery()
     {
-        isStar = true;
         isConditional = true;
         noRepeted = false;
     }
@@ -59,16 +58,31 @@ public class Vid_SelectQuery : Vid_Query
     /*Builder functions*/
     public override bool addInput(Vid_Object obj, int argumentIndex) {
         // Note: don't change, Table=0,COL=1,Where=2 need to be these value.  
-        switch (obj.output_dataType) {
-            case VidData_Type.DATABASE_TABLE:
-                base.addInput(obj, 0);
-                break;
-            case VidData_Type.DATABASE_COL:
-                base.addInput(obj, 1);
-                break;
-            case VidData_Type.DATABASE_WHERE:
-                base.addInput(obj, 2);
-                break;
+        switch (argumentIndex) {
+            case 0:
+                if (obj.output_dataType == VidData_Type.DATABASE_TABLE) {
+                    bool b = base.addInput(obj, 0);
+                    return b;
+                }
+                else {
+                    return false;
+                }
+            case 1:
+                if(obj.output_dataType == VidData_Type.DATABASE_COL) {
+                    bool b = base.addInput(obj, 1);
+                    return b;
+                }
+                else {
+                    return false;
+                }
+            case 2:
+                if (obj.output_dataType == VidData_Type.DATABASE_WHERE) {
+                    bool b = base.addInput(obj, 2);
+                    return b;
+                }
+                else {
+                    return false;
+                }
         }
         return false;
     }

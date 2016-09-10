@@ -26,7 +26,8 @@ public class Vid_MultiInput : Vid_Object {
     /*Builder functions*/
     public override bool addInput(Vid_Object obj, int index) {
         if (obj.output_dataType == output_dataType) {
-            base.addInput(obj, index);
+            Debug.Log("fdsfdsdsffds");
+            return base.addInput(obj, index);
         }
         return false;
     }

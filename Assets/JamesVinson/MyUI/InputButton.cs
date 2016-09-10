@@ -28,9 +28,6 @@ public class InputButton : NodeButton {
                 case ButtonType.INPUT_DATA:
                     vidObj.removeInput(argumentIndex);
                     break;
-                case ButtonType.INPUT_SEQUENCE:
-                    output.removeSequence();
-                    break;
             }
             output = null;
             used = false;
@@ -42,9 +39,6 @@ public class InputButton : NodeButton {
                 {
                     case ButtonType.INPUT_DATA:
                         transferData();
-                        break;
-                    case ButtonType.INPUT_SEQUENCE:
-                        transferSequence();
                         break;
                 }
             }
@@ -77,17 +71,18 @@ public class InputButton : NodeButton {
             {
                 ct.setInputButton(this);
                 output.setIsUse(false);
-
-                vidObj.addInput(outputObj, argumentIndex);
-
-                used = true;
-                drawline = true;
+                bool b = vidObj.addInput(outputObj, argumentIndex);
+                Debug.Log("rrttrrttr:" +  b);
+                if(b) {
+                    used = true;
+                    drawline = true;
+                }
                 ct.resetTool();
                 break;
             }
         }
     }
-    private void transferSequence()
+   private void transferSequence()
     {
         output = ct.getOutputButton();
         ct.setInputButton(this);

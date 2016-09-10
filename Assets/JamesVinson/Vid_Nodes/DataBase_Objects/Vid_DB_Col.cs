@@ -1,6 +1,10 @@
-﻿public class Vid_DB_Col : Vid_Object {
+﻿using System.Text;
+
+public class Vid_DB_Col : Vid_Object {
 
     public string colName;
+
+    public bool modeflag = false;
 
     public MySql_colTypes type = MySql_colTypes.MYSQL_INT;
 
@@ -17,7 +21,31 @@
     }
 
     public override string ToString() {
-        return colName;
+        StringBuilder sb = new StringBuilder();
+        if (modeflag) {
+            sb.Append(colName + " ");
+            switch (type) {
+                case MySql_colTypes.MYSQL_INT:
+                    break;
+                case MySql_colTypes.MYSQL_FLOAT:
+                    break;
+                case MySql_colTypes.MYSQL_DOUBLE:
+                    break;
+                case MySql_colTypes.MYSQL_TIMESTAMP:
+                    break;
+                case MySql_colTypes.MYSQL_CHAR:
+                    break;
+                case MySql_colTypes.MYSQL_BLOB:
+                    break;
+                case MySql_colTypes.MYSQL_ENUM:
+                    break;
+            }
+            return sb.ToString();
+        }
+        else {
+            return colName;
+        }
+        
     }
 
     public void toggleMySql_ColType() {

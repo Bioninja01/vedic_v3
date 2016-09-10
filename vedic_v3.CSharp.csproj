@@ -169,9 +169,13 @@
     <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Ui_enum\ButtonType.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\ButtonAdder.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\InputButton.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\KeyboardController.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\KeyboardText.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\NodeButton.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\OutputButton.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\TerminalController.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\TextFieldController.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\UiControllers\TableController.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\Vid_ObjContainer.cs" />
     <Compile Include="Assets\JamesVinson\PlayerMovement.cs" />
     <Compile Include="Assets\JamesVinson\Test_L.cs" />
