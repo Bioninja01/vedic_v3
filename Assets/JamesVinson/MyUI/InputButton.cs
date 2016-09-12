@@ -72,7 +72,6 @@ public class InputButton : NodeButton {
                 ct.setInputButton(this);
                 output.setIsUse(false);
                 bool b = vidObj.addInput(outputObj, argumentIndex);
-                Debug.Log("rrttrrttr:" +  b);
                 if(b) {
                     used = true;
                     drawline = true;

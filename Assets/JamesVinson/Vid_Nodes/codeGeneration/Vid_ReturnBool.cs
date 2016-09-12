@@ -52,10 +52,10 @@ public class Vid_ReturnBool : Vid_Return
         {
             sb.Append("return false;");
         }
-        String token = tokenFactory.popToken();
+        //String token = tokenFactory.popToken();
 
-        /** Should replace theses steps into a function**/
-        targetString.Replace(token, sb.ToString());
+        ///** Should replace theses steps into a function**/
+        //targetString.Replace(token, sb.ToString());
     }
     
 }

@@ -6,7 +6,7 @@ using System;
 public class Vid_MultiInput : Vid_Object {
 
  
-    int inputSize = 1;
+    public int inputSize = 1;
 
     public Vid_MultiInput(){
         output_dataType = VidData_Type.NUM;
@@ -26,12 +26,11 @@ public class Vid_MultiInput : Vid_Object {
     /*Builder functions*/
     public override bool addInput(Vid_Object obj, int index) {
         if (obj.output_dataType == output_dataType) {
-            Debug.Log("fdsfdsdsffds");
             return base.addInput(obj, index);
         }
         return false;
     }
-    public void incromentInputs() {
+    public virtual void incromentInputs() {
         inputSize++;
         Vid_ObjectInputs newInputs = new Vid_ObjectInputs(inputSize);
         for(int i =0; i < inputSize - 1; i++) {
@@ -39,7 +38,7 @@ public class Vid_MultiInput : Vid_Object {
         }
         inputs = newInputs;
     }
-    public void decromentInputs() {
+    public virtual void decromentInputs() {
         if(inputSize > 1) {
             inputSize--;
         }

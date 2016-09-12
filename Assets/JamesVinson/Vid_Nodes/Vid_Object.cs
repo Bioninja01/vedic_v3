@@ -7,12 +7,8 @@ public abstract class Vid_Object : MonoBehaviour, Inputable
     public VidData_Type output_dataType;
 
 
-    protected Vid_TokenFactory tokenFactory;
+    public virtual void Awake(){}
 
-    public virtual void Awake()
-    {
-        tokenFactory = Vid_TokenFactory.getInstance();
-    }
     /*Builder Functions*/
     public virtual void updateData() { }
     public virtual bool addInput(Vid_Object obj, int argumentIndex) {

@@ -2,15 +2,22 @@
 
 public class Vid_DB_Col : Vid_Object {
 
-    public string colName;
-
-    public bool modeflag = false;
-
+    public enum ColState {
+        NAME,
+        EXPRESSION,
+        DATA,
+    }
+    public ColState colMode = ColState.NAME;
     public MySql_colTypes type = MySql_colTypes.MYSQL_INT;
 
+    public string colName;
+    public string cellName = "defaultNAME";
+    public string asName = "defaultNAME";
+
     private bool isSetable = false;
-    private bool NotNull;
-    private int charvar_Number = 1;
+    public bool NotNull = false;
+    public bool asFlag = false;
+    public int charvar_Number = 1;
 
 
     public new void Awake() 
@@ -22,30 +29,60 @@ public class Vid_DB_Col : Vid_Object {
 
     public override string ToString() {
         StringBuilder sb = new StringBuilder();
-        if (modeflag) {
-            sb.Append(colName + " ");
-            switch (type) {
-                case MySql_colTypes.MYSQL_INT:
-                    break;
-                case MySql_colTypes.MYSQL_FLOAT:
-                    break;
-                case MySql_colTypes.MYSQL_DOUBLE:
-                    break;
-                case MySql_colTypes.MYSQL_TIMESTAMP:
-                    break;
-                case MySql_colTypes.MYSQL_CHAR:
-                    break;
-                case MySql_colTypes.MYSQL_BLOB:
-                    break;
-                case MySql_colTypes.MYSQL_ENUM:
-                    break;
-            }
-            return sb.ToString();
+        switch (colMode) {
+            case ColState.NAME:
+                if (asFlag) {
+                    return colName + " As" + asName;
+                }
+                else {
+                    return colName;
+                }
+            case ColState.EXPRESSION:
+                return colName + " = " + cellName;
+            case ColState.DATA:
+                switch (type) {
+                    case MySql_colTypes.MYSQL_INT:
+                        sb.Append(colName + " int ");
+                        if (NotNull) {
+                            sb.Append("NOT NULL");
+                        }
+                        break;
+                    case MySql_colTypes.MYSQL_FLOAT:
+                        sb.Append(colName + " float ");
+                        if (NotNull) {
+                            sb.Append("NOT NULL");
+                        }
+                        break;
+                    case MySql_colTypes.MYSQL_DOUBLE:
+                        sb.Append(colName + " double ");
+                        if (NotNull) {
+                            sb.Append("NOT NULL");
+                        }
+                        break;
+                    case MySql_colTypes.MYSQL_TIMESTAMP:
+                        sb.Append(colName + " TIMESTAMP  ");
+                        if (NotNull) {
+                            sb.Append("NOT NULL");
+                        }
+                        break;
+                    case MySql_colTypes.MYSQL_CHAR:
+                        sb.Append(colName + " VARCHAR(" + charvar_Number + ")");
+                        if (NotNull) {
+                            sb.Append("NOT NULL");
+                        }
+                        break;
+                    case MySql_colTypes.MYSQL_BLOB:
+                        sb.Append(colName + " BLOB ");
+                        if (NotNull) {
+                            sb.Append("NOT NULL");
+                        }
+                        break;
+                    case MySql_colTypes.MYSQL_ENUM:
+                        break;
+                }
+                return sb.ToString();
         }
-        else {
-            return colName;
-        }
-        
+        return "";
     }
 
     public void toggleMySql_ColType() {

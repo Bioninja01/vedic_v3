@@ -1,102 +1,54 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
-using System;
+﻿using System.Collections.Generic;
 using System.Text;
 
 public class Vid_CreateQuery : Vid_Query
 {
-    List<Vid_DB_Col> cols_in_table;
     string primaryKey;
 
-    public Vid_CreateQuery()
-    {
-        cols_in_table = new List<Vid_DB_Col>();
+    public override void Awake() {
+        base.Awake();
+        base.output_dataType = VidData_Type.DATABASE_TABLE;
+        inputs = new Vid_ObjectInputs(2);
+        acceptableInputs = new VidData_Type[2];
+            acceptableInputs[0] = VidData_Type.DATABASE_TABLE;
+            acceptableInputs[1] = VidData_Type.DATABASE_COL;
     }
 
-    public override void startStringify()
-    {
-        stringify(queryText);
-    }
-
-    public override void stringify(StringBuilder targetString)
-    {
+    public override string ToString() {
         StringBuilder sb = new StringBuilder();
-        sb.Append("CREATE TABLE ");
-        sb.Append(table.tableName + "(");
-        sb.Append(Environment.NewLine);
-        sb.Append(writeCols());
-        sb.Append(");");
-        targetString = sb;
-    }
-
-    // helper function
-    private string writeCols()
-    {
-        StringBuilder sb = new StringBuilder();
-        int count = 0;
-
-        foreach (Vid_DB_Col col in cols_in_table)
-        {
-            sb.Append(col.colName + " ");
-            switch (col.type)
-            {
-                case MySql_colTypes.MYSQL_BLOB:
-                    sb.Append("BLOB ");
-                    break;
-                case MySql_colTypes.MYSQL_CHAR:
-                    sb.Append("CHAR ");
-                    break;
-                case MySql_colTypes.MYSQL_VARCHAR:
-                    sb.Append("varchar(" + col.getCarVarNumber() + ") ");
-                    break;
-                case MySql_colTypes.MYSQL_INT:
-                    sb.Append("INT ");
-                    break;
-                case MySql_colTypes.MYSQL_DOUBLE:
-                    sb.Append("DOUBLE ");
-                    break;
-                case MySql_colTypes.MYSQL_FLOAT:
-                    sb.Append("FLOAT ");
-                    break;
-                case MySql_colTypes.MYSQL_TIMESTAMP:
-                    sb.Append("TIMESTAMP ");
-                    break;
-            }
-            if (col.isNotNull())
-            {
-                sb.Append("NOT NULL");
-            }
-            if (count < cols_in_table.Count - 1)
-            {
-                sb.Append(", ");
-                count++;
-            }
-            sb.Append(Environment.NewLine);
+        if (inputs.getInput_atIndex(0) == null) {
+            sb.Append("CREATE TABLE  error::NoTable (");
         }
-        sb.Append("PRIMARY KEY (" +primaryKey+")");
+        else {
+            sb.Append("CREATE TABLE " + inputs.getInput_atIndex(0).ToString() + " (");
+        }
+        if (inputs.getInput_atIndex(1) != null) {
+            sb.Append(inputs.getInput_atIndex(1).ToString());
+        }
+        sb.Append(");");
         return sb.ToString();
     }
 
-    //builders
-    public void addColumn(Vid_DB_Col col)
-    {
-        cols_in_table.Add(col);
+    public override bool addInput(Vid_Object obj, int argumentIndex) {
+        // Note: don't change, Table=0,COL=1,Where=2 need to be these value.  
+        switch (argumentIndex) {
+            case 0:
+                if (obj.output_dataType == VidData_Type.DATABASE_TABLE) {
+                    bool b = base.addInput(obj, 0);
+                    return b;
+                }
+                else {
+                    return false;
+                }
+            case 1:
+                if (obj.output_dataType == VidData_Type.DATABASE_COL) {
+                    bool b = base.addInput(obj, 1);
+                    return b;
+                }
+                else {
+                    return false;
+                }
+        }
+        return false;
     }
-    public void removeColumn(Vid_DB_Col col)
-    {
-        cols_in_table.Remove(col);
-    }
-
-    //getters
-    public string getPrimaryKey()
-    {
-        return primaryKey;
-    }
-    //setters
-    public void setPrimaryKey(String s)
-    {
-        this.primaryKey = s;
-    }
-
 }

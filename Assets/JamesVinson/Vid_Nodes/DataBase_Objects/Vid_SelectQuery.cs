@@ -23,7 +23,7 @@ public class Vid_SelectQuery : Vid_Query
         acceptableInputs = new VidData_Type[3];
             acceptableInputs[0] = VidData_Type.DATABASE_TABLE;
             acceptableInputs[1] = VidData_Type.DATABASE_COL;
-            acceptableInputs[2] = VidData_Type.DATABASE_WHERE;
+            acceptableInputs[2] = VidData_Type.DATABASE_CALUSE;
     }
 
     public override string ToString() {
@@ -47,14 +47,6 @@ public class Vid_SelectQuery : Vid_Query
         return sb.ToString();
     }
 
-    /*String Creation functions*/
-    public override void startStringify() {
-        stringify(queryText);
-    }
-    public override void stringify(StringBuilder targetString) {
-        updateData();
-    }
-
     /*Builder functions*/
     public override bool addInput(Vid_Object obj, int argumentIndex) {
         // Note: don't change, Table=0,COL=1,Where=2 need to be these value.  
@@ -76,7 +68,7 @@ public class Vid_SelectQuery : Vid_Query
                     return false;
                 }
             case 2:
-                if (obj.output_dataType == VidData_Type.DATABASE_WHERE) {
+                if (obj.output_dataType == VidData_Type.DATABASE_CALUSE) {
                     bool b = base.addInput(obj, 2);
                     return b;
                 }

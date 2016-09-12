@@ -7,20 +7,6 @@ using System.Text;
 
 public class Vid_UpdateQuery : Vid_Query
 {
-    public override void startStringify()
-    {
-        stringify(queryText);
-    }
-
-    public override void stringify(StringBuilder targetString)
-    {
-        StringBuilder sb = new StringBuilder();
-        sb.Append("UPDATE ");
-        sb.Append(table.tableName);
-        sb.Append("SET  ");
-        sb.Append(writeValues());
-        sb.Append(" ;");
-    }
 
     private string writeValues()
     {

@@ -22,12 +22,12 @@ public class Vid_Branch : Vid_SequenceableObject {
         }
         else {
             sb.Append("if( " + inputs.getInput_atIndex(0).ToString() + " ){ \n");
-            sb.Append(tokenFactory.generateToken() + "\n");
+            //sb.Append(tokenFactory.generateToken() + "\n");
             sb.Append("} \n");
 
 
             sb.Append("else{ \n");
-            sb.Append(tokenFactory.generateToken() + "\n");
+            //sb.Append(tokenFactory.generateToken() + "\n");
             sb.Append("} \n");
         }
         return sb.ToString();
@@ -43,23 +43,23 @@ public class Vid_Branch : Vid_SequenceableObject {
         return false;
     }
     public override void stringify(StringBuilder targetString) {
-        // personal text
-        StringBuilder sb = new StringBuilder();
+        //// personal text
+        //StringBuilder sb = new StringBuilder();
 
-        sb.Append("if( " + inputs.getInput_atIndex(0).ToString() + " ){ \n");
-        sb.Append(tokenFactory.generateToken() + "\n");
-        sb.Append("} \n");
+        //sb.Append("if( " + inputs.getInput_atIndex(0).ToString() + " ){ \n");
+        ////sb.Append(tokenFactory.generateToken() + "\n");
+        //sb.Append("} \n");
 
 
-        sb.Append("else{ \n");
-        sb.Append(tokenFactory.generateToken() + "\n");
-        sb.Append("} \n");
+        //sb.Append("else{ \n");
+        ////sb.Append(tokenFactory.generateToken() + "\n");
+        //sb.Append("} \n");
 
-        String token = tokenFactory.popToken();
-        // Add To the file text.
+        ////String token = tokenFactory.popToken();
+        //// Add To the file text.
 
-        Debug.Log(targetString.ToString());
-        targetString.Replace(token, sb.ToString());
+        //Debug.Log(targetString.ToString());
+        //targetString.Replace(token, sb.ToString());
 
     }
 

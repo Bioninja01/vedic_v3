@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
 using System;
-using System.Text;
 
 public class Vid_Number : Vid_Object
 {

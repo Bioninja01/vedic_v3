@@ -35,7 +35,7 @@ public class Vid_Function : Vid_Expression
         sb.Append( prefixCommon_String() + " " +
                              prefixReturn_String() + " " +
                              functionName + "(" + writeParameters() + ")"+ Environment.NewLine);
-        sb.Append("{"+ Environment.NewLine +tokenFactory.generateToken()+ Environment.NewLine);
+        sb.Append("{"+ Environment.NewLine);
         sb.Append("}");
 
         string text_outPut = sb.ToString();

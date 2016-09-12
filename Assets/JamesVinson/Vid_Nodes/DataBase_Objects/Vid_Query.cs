@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-public abstract class Vid_Query : Vid_Expression {
+public abstract class Vid_Query : Vid_Object {
 
     public Vid_DB_Table table;
     public List<Vid_DB_Col> cols;

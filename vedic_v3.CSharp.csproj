@@ -167,7 +167,6 @@
     <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Slider\SliderBase.cs" />
     <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\SliderActivationManager.cs" />
     <Compile Include="Assets\JamesVinson\LeapMotionModules\Widgets\widgetsScripts\Ui_enum\ButtonType.cs" />
-    <Compile Include="Assets\JamesVinson\MyUI\ButtonAdder.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\InputButton.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\KeyboardController.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\KeyboardText.cs" />
@@ -175,6 +174,10 @@
     <Compile Include="Assets\JamesVinson\MyUI\OutputButton.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\TerminalController.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\TextFieldController.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\UiControllers\Controller_Col.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\UiControllers\Controller_DescToggle.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\UiControllers\Controller_MultiInput.cs" />
+    <Compile Include="Assets\JamesVinson\MyUI\UiControllers\Controller_OrderBy.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\UiControllers\TableController.cs" />
     <Compile Include="Assets\JamesVinson\MyUI\Vid_ObjContainer.cs" />
     <Compile Include="Assets\JamesVinson\PlayerMovement.cs" />
@@ -188,10 +191,10 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_DeleteQuery.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_InsertQuery.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_MySql_Where.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_OrderBy.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_Query.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_SelectQuery.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_UpdateQuery.cs" />
-    <Compile Include="Assets\JamesVinson\Vid_Nodes\NewBehaviourScript.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Data.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Expression.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_MultiInput.cs" />
@@ -224,6 +227,7 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\VidData_Type.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\VidNum_Type.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\Vid_Prefix.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\ButtonAdder.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Inputable.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Resizeable.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Stringifyable.cs" />
