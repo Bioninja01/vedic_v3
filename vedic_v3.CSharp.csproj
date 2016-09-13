@@ -195,6 +195,7 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_Query.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_SelectQuery.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_UpdateQuery.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_Where_Condition.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Data.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Expression.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_MultiInput.cs" />

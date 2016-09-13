@@ -6,7 +6,6 @@ public abstract class Vid_Object : MonoBehaviour, Inputable
     protected VidData_Type[] acceptableInputs;
     public VidData_Type output_dataType;
 
-
     public virtual void Awake(){}
 
     /*Builder Functions*/
