@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class Controller_MultiInput : MonoBehaviour, ButtonAdder {
-    public Vid_MultiInput mInput;
+    public Vid_MultiInput node;
     public RectTransform button;
     public GridLayoutGroup layout;
     public List<RectTransform> buttons;
@@ -11,17 +11,16 @@ public class Controller_MultiInput : MonoBehaviour, ButtonAdder {
     public virtual void addButton_toLayout() {
         RectTransform rt = (RectTransform)Instantiate(button, new Vector3(0, 0, 0), Quaternion.identity);
         InputButton input = rt.GetComponent<InputButton>();
-        input.input_dataType = mInput.output_dataType;
-        input.vidObj = mInput;
+        input.vidObj = node;
         rt.SetParent(layout.transform, false);
         buttons.Add(rt);
         input.argumentIndex = buttons.Count;
-        mInput.incromentInputs();
+        node.incromentInputs();
     }
 
-    public void removeButton_fromLayout() {
+    public virtual void removeButton_fromLayout() {
         GameObject.Destroy(buttons[buttons.Count - 1].gameObject);
         buttons.RemoveAt(buttons.Count - 1);
-        mInput.decromentInputs();
+        node.decromentInputs();
     }
 }

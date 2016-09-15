@@ -12,7 +12,7 @@ public class Vid_DB_Col : Vid_Object {
 
     public string colName;
     public string cellName = "defaultNAME";
-    public string asName = "defaultNAME";
+    public string asName = "defaultNAME" ;
 
     private bool isSetable = false;
     public bool NotNull = false;
@@ -20,25 +20,39 @@ public class Vid_DB_Col : Vid_Object {
     public int charvar_Number = 1;
 
 
-    public new void Awake() 
+    public Vid_DB_Col() {
+        output_dataType = VidData_Type.DATABASE_COL;
+    }
+
+    public override void Awake() 
     {
-        base.Awake();
-        base.output_dataType = VidData_Type.DATABASE_COL;
-        NotNull = false;
+       acceptableInputs = new VidData_Type[1];
+           acceptableInputs[0] = VidData_Type.DATABASE_TABLE;
     }
 
     public override string ToString() {
         StringBuilder sb = new StringBuilder();
+        Vid_Object obj = inputs.getInput_atIndex(0);
         switch (colMode) {
             case ColState.NAME:
                 if (asFlag) {
-                    return colName + " As" + asName;
+                    if(obj != null) {
+                        return obj.ToString() + "." + colName + " As" + asName;
+                    }
+                    else {
+                        return colName + " As" + asName;
+                    }
                 }
                 else {
                     return colName;
                 }
             case ColState.EXPRESSION:
-                return colName + " = " + cellName;
+                if (obj != null) {
+                    return obj.ToString() + "." + colName + " = " + cellName;
+                }
+                else {
+                    return colName + " = " + cellName;
+                }
             case ColState.DATA:
                 switch (type) {
                     case MySql_colTypes.MYSQL_INT:
@@ -85,36 +99,11 @@ public class Vid_DB_Col : Vid_Object {
         return "";
     }
 
-    public void toggleMySql_ColType() {
-        switch (type) {
-            case MySql_colTypes.MYSQL_INT:
-                type = MySql_colTypes.MYSQL_FLOAT;
-                break;
-            case MySql_colTypes.MYSQL_FLOAT:
-                type = MySql_colTypes.MYSQL_DOUBLE;
-                break;
-            case MySql_colTypes.MYSQL_DOUBLE:
-                type = MySql_colTypes.MYSQL_CHAR;
-                break;
-            case MySql_colTypes.MYSQL_CHAR:
-                type = MySql_colTypes.MYSQL_BLOB;
-                break;
-            case MySql_colTypes.MYSQL_BLOB:
-                type = MySql_colTypes.MYSQL_TIMESTAMP;
-                break;
-            case MySql_colTypes.MYSQL_TIMESTAMP:
-                type = MySql_colTypes.MYSQL_VARCHAR;
-                break;
-            case MySql_colTypes.MYSQL_VARCHAR:
-                type = MySql_colTypes.MYSQL_ENUM;
-                break;
-            case MySql_colTypes.MYSQL_ENUM:
-                type = MySql_colTypes.MYSQL_INT;
-                break;
-            default:
-                type = MySql_colTypes.MYSQL_INT;
-                break;
+    public override bool addInput(Vid_Object obj, int argumentIndex) {
+        if (obj.output_dataType == VidData_Type.DATABASE_TABLE) {
+            return base.addInput(obj, argumentIndex);
         }
+        return false;
     }
 
     /*Getters*/

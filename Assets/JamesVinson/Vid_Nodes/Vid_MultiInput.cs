@@ -5,7 +5,6 @@ using System;
 
 public class Vid_MultiInput : Vid_Object {
 
- 
     public int inputSize = 1;
 
     public Vid_MultiInput(){

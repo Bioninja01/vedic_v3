@@ -11,6 +11,7 @@ public abstract class Vid_Object : MonoBehaviour, Inputable
     /*Builder Functions*/
     public virtual void updateData() { }
     public virtual bool addInput(Vid_Object obj, int argumentIndex) {
+        Debug.Log(argumentIndex);
         bool b = inputs.setInput_atIndex(obj, argumentIndex);
         return b;
     }

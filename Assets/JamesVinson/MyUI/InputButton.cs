@@ -5,8 +5,6 @@ using LMWidgets;
 public class InputButton : NodeButton {
 
     public int argumentIndex;
-    public VidData_Type input_dataType = VidData_Type.NUM;
-    public ButtonType buttonType = ButtonType.INPUT_DATA;
 
     public Vid_Object vidObj;
 
@@ -16,31 +14,25 @@ public class InputButton : NodeButton {
     public LineRenderer lineRender;
     Renderer r;
 
-
     public override void buttonPressed()
     {
+        Debug.Log("Test:1");
         if (used && ct.getOutputButton() == null)
         {
             lineRender.enabled = false;
             drawline = false;
-            switch (buttonType)
-            {
-                case ButtonType.INPUT_DATA:
-                    vidObj.removeInput(argumentIndex);
-                    break;
-            }
+
+            vidObj.removeInput(argumentIndex);
+
             output = null;
             used = false;
         }
         else {
+            Debug.Log("Test:2");
             if ((ct.getInputButton() == null) && (ct.getOutputButton() != null))
             {
-                switch (buttonType)
-                {
-                    case ButtonType.INPUT_DATA:
-                        transferData();
-                        break;
-                }
+                Debug.Log("Test:3");
+                transferData();
             }
         }
     }
@@ -61,18 +53,22 @@ public class InputButton : NodeButton {
     }
 
    private void transferData()
-    {
+   {
         VidData_Type[] acceptable_dataTypes = vidObj.getAcceptableInputs();
         output = ct.getOutputButton();
         Vid_Object outputObj = output.vid_obj;
+        Debug.Log("Test:4");
         foreach (VidData_Type d in acceptable_dataTypes)
         {
+            Debug.Log(d == outputObj.output_dataType);
             if (d == outputObj.output_dataType)
             {
                 ct.setInputButton(this);
                 output.setIsUse(false);
+                Debug.Log("argumentIndex : " + argumentIndex);
                 bool b = vidObj.addInput(outputObj, argumentIndex);
-                if(b) {
+                Debug.Log(b +"here");
+                if (b) {
                     used = true;
                     drawline = true;
                 }
@@ -81,22 +77,4 @@ public class InputButton : NodeButton {
             }
         }
     }
-   private void transferSequence()
-    {
-        output = ct.getOutputButton();
-        ct.setInputButton(this);
-        output.setIsUse(false);
-
-        Vid_SequenceableObject seqObj = (Vid_SequenceableObject)vidObj;
-        Debug.Log(seqObj.ToString());
-
-        output.addSequence(seqObj);
-
-        used = true;
-        drawline = true;
-        ct.resetTool();
-    }
-
-
-
 }

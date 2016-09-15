@@ -36,13 +36,16 @@ public class Vid_OrderBy : Vid_MultiInput {
 
     public override bool addInput(Vid_Object obj, int index) {
         if (obj.output_dataType == VidData_Type.DATABASE_COL) {
+            Debug.Log("Big trace");
             Vid_DB_Col colnode = (Vid_DB_Col)obj;
-            return base.addInput(obj, index);
+            bool b = inputs.setInput_atIndex(obj, index);
+            return b;
         }
         return false;
     }
 
     public override void incromentInputs() {
+        Debug.Log("test:E");
         inputSize++;
         Vid_ObjectInputs newInputs = new Vid_ObjectInputs(inputSize);
         bool[] newIsDesc = new bool[inputSize];
@@ -54,6 +57,7 @@ public class Vid_OrderBy : Vid_MultiInput {
         isDesc = newIsDesc;
     }
     public override void decromentInputs() {
+        Debug.Log("test:Q");
         if (inputSize > 1) {
             inputSize--;
         }
