@@ -8,6 +8,7 @@ public class UIMove_Tool : MonoBehaviour, IDragHandler {
 
     public JamesV_LeapRTS rts;
     public TerminalController tc;
+    public GameObject fileObj;
 
     void Awake() {
         if (rts != null) {
@@ -17,17 +18,10 @@ public class UIMove_Tool : MonoBehaviour, IDragHandler {
             rts = gameObject.AddComponent<JamesV_LeapRTS>();
             rts.speed = 5;
             rts.enabled = false;
-            /*Todd: finish setting up rts*/
         }
     }
 
-    public void OnMouseDrag() {
-        //float z =transform.position.z;
-        //Vector3 v3 = Input.mousePosition;
-        //Debug.Log(v3);
-        //transform.position = new Vector3( v3.x - Screen.width/2, v3.y - Screen.height/2, z);
-    
-    }
+    public void OnMouseDrag() {}
 
     public void setholding(GameObject obj2hold) {
         if (holding == null) {
@@ -67,7 +61,12 @@ public class UIMove_Tool : MonoBehaviour, IDragHandler {
     private void deActivateHolder() {
         Vid_ObjContainer com;
         rts.enabled = false;
-        holding.transform.parent = null;
+        if (fileObj.Equals(holding)) {
+            holding.transform.parent = null;
+        }
+        else {
+            holding.transform.parent = fileObj.transform;
+        }
         com = holding.GetComponent<Vid_ObjContainer>();
         if (com == null) {
             holding = null;
@@ -82,8 +81,5 @@ public class UIMove_Tool : MonoBehaviour, IDragHandler {
     }
 
 
-    public void OnDrag(PointerEventData eventData) {
-        //Debug.Log(Input.mousePosition + ":::" + Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        //transform.position = Input.mousePosition;
-    }
+    public void OnDrag(PointerEventData eventData) {}
 }

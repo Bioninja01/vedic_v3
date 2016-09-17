@@ -57,7 +57,6 @@ public class InputButton : NodeButton {
         VidData_Type[] acceptable_dataTypes = vidObj.getAcceptableInputs();
         output = ct.getOutputButton();
         Vid_Object outputObj = output.vid_obj;
-        Debug.Log("Test:4");
         foreach (VidData_Type d in acceptable_dataTypes)
         {
             Debug.Log(d == outputObj.output_dataType);
@@ -65,9 +64,7 @@ public class InputButton : NodeButton {
             {
                 ct.setInputButton(this);
                 output.setIsUse(false);
-                Debug.Log("argumentIndex : " + argumentIndex);
                 bool b = vidObj.addInput(outputObj, argumentIndex);
-                Debug.Log(b +"here");
                 if (b) {
                     used = true;
                     drawline = true;

@@ -6,7 +6,6 @@ using System.Text;
 
 public class Vid_SelectQuery : Vid_Query
 {
-
     public bool noRepeted;
     public bool isConditional;
 
@@ -69,6 +68,7 @@ public class Vid_SelectQuery : Vid_Query
                 }
             case 2:
                 if (obj.output_dataType == VidData_Type.DATABASE_CALUSE) {
+                    Debug.Log("here");
                     bool b = base.addInput(obj, 2);
                     return b;
                 }

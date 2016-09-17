@@ -8,13 +8,13 @@ public class Controller_Col : MonoBehaviour {
     public Vid_DB_Col node;
     
     /*Setters*/
-    public void setColName(Text t) {
+    public void setColName(InputField t) {
         node.colName = t.text;
     }
-    public void setCellName(Text t) {
+    public void setCellName(InputField t) {
         node.cellName = t.text;
     }
-    public void setCharvar_Number(Text t) {
+    public void setCharvar_Number(InputField t) {
         try {
             node.charvar_Number = int.Parse(t.text);
         }

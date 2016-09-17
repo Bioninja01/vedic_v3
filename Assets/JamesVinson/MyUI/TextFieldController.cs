@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class TextFieldController : MonoBehaviour, IPointerClickHandler {
 
-    public KeyboardText kt;
-    public Text text;
+    public KeyboardController kc;
+    public InputField inputField;
 
     public void OnPointerClick(PointerEventData eventData) {
-        kt.t = text;
+        kc.clearText();
+        kc.setInputField(inputField);
     }
 
 }

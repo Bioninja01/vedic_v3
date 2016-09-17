@@ -11,7 +11,6 @@ public class Vid_ObjContainer : MonoBehaviour {
     public Text getText()
     {
         if(selectButton == null) { return null; }
-
         return selectButton.GetComponentInChildren<Text>();
     }
 

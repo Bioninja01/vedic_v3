@@ -26,7 +26,8 @@ public class Vid_DB_Col : Vid_Object {
 
     public override void Awake() 
     {
-       acceptableInputs = new VidData_Type[1];
+        inputs = new Vid_ObjectInputs(1);
+        acceptableInputs = new VidData_Type[1];
            acceptableInputs[0] = VidData_Type.DATABASE_TABLE;
     }
 

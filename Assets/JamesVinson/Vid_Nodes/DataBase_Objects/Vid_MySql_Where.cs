@@ -13,17 +13,22 @@ public class Vid_MySql_Where : Vid_Object
 
     public override void Awake() {
         base.Awake();
+        inputs = new Vid_ObjectInputs(2);
         acceptableInputs = new VidData_Type[2];
             acceptableInputs[0] = VidData_Type.BOOL;
             acceptableInputs[1] = VidData_Type.DATABASE_CALUSE;
-        inputs = new Vid_ObjectInputs(2);
     }
     public override string ToString() 
     {
         StringBuilder sb = new StringBuilder();
-        sb.Append("WHERE");
+        sb.Append("WHERE ");
+        if (inputs.getInput_atIndex(0) != null) {
+            sb.Append(inputs.getInput_atIndex(0).ToString());
+        }
         sb.Append(Environment.NewLine);
-        
+        if(inputs.getInput_atIndex(1) != null) {
+            sb.Append(inputs.getInput_atIndex(1).ToString());
+        }
         return sb.ToString();
     }
 
