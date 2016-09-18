@@ -52,6 +52,12 @@ public class Controller_Col : MonoBehaviour {
                 break;
         }
     }
+    public void setAsflag(Toggle t) {
+        node.asFlag = t.isOn;
+    }
+    public void setNotNull(Toggle t) {
+        node.notNull = t.isOn;
+    }
     public void dublicateNode() {
         Instantiate(prefab, new Vector3(prefab.position.x, prefab.position.y+.2f, prefab.position.z), prefab.rotation);
     }

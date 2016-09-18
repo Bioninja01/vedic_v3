@@ -40,7 +40,7 @@ public class Vid_SelectQuery : Vid_Query
             sb.Append("FROM " + inputs.getInput_atIndex(0).ToString() + " ");
         }
         if (inputs.getInput_atIndex(2) != null) {
-            sb.Append(inputs.getInput_atIndex(3).ToString() + " ");
+            sb.Append(inputs.getInput_atIndex(2).ToString() + " ");
         }
         sb.Append(" ;");
         return sb.ToString();
@@ -68,7 +68,6 @@ public class Vid_SelectQuery : Vid_Query
                 }
             case 2:
                 if (obj.output_dataType == VidData_Type.DATABASE_CALUSE) {
-                    Debug.Log("here");
                     bool b = base.addInput(obj, 2);
                     return b;
                 }

@@ -11,9 +11,10 @@ public class Vid_InsertQuery : Vid_Query
         base.Awake();
         base.output_dataType = VidData_Type.DATABASE_TABLE;
         inputs = new Vid_ObjectInputs(2);
-        acceptableInputs = new VidData_Type[2];
+        acceptableInputs = new VidData_Type[3];
             acceptableInputs[0] = VidData_Type.DATABASE_TABLE;
             acceptableInputs[1] = VidData_Type.DATABASE_COL;
+            acceptableInputs[2] = VidData_Type.DATABASE_CALUSE;
     }
 
     public override string ToString() {
@@ -25,7 +26,10 @@ public class Vid_InsertQuery : Vid_Query
             sb.Append("INSERT INTO " + inputs.getInput_atIndex(0).ToString() + " SET ");
         }
         if (inputs.getInput_atIndex(1) != null) {
-            sb.Append(inputs.getInput_atIndex(1).ToString());
+            sb.Append(inputs.getInput_atIndex(1).ToString() + " ");
+        }
+        if (inputs.getInput_atIndex(2) != null) {
+            sb.Append(inputs.getInput_atIndex(2).ToString());
         }
         sb.Append(";");
         return sb.ToString();
@@ -50,26 +54,15 @@ public class Vid_InsertQuery : Vid_Query
                 else {
                     return false;
                 }
+            case 2:
+                if (obj.output_dataType == VidData_Type.DATABASE_CALUSE) {
+                    bool b = base.addInput(obj, 2);
+                    return b;
+                }
+                else {
+                    return false;
+                }
         }
         return false;
     }
-
-    // helper function
-    private string writeValues()
-    {
-        StringBuilder sb = new StringBuilder();
-        int count = 0;
-
-        foreach (Vid_DB_Col c in cols)
-        {
-            sb.Append(c.colName + " = " + c.ToString());
-            if (count < cols.Count - 1)
-            {
-                sb.Append(", ");
-                count++;
-            }
-        }
-        return sb.ToString();
-    }
-
 }

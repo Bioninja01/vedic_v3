@@ -66,7 +66,8 @@ public class Vid_Where_Condition : Vid_Object {
         else {
             if (obj.output_dataType == VidData_Type.DATABASE_TABLE
                     || obj.output_dataType == VidData_Type.NUM
-                    || obj.output_dataType == VidData_Type.STRING) {
+                    || obj.output_dataType == VidData_Type.STRING
+                    || obj.output_dataType == VidData_Type.BOOL) {
                 if (index == 1) {
                     return base.addInput(obj, index);
                 }

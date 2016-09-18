@@ -10,6 +10,7 @@ public class TextFieldController : MonoBehaviour, IPointerClickHandler {
     public InputField inputField;
 
     public void OnPointerClick(PointerEventData eventData) {
+        if (inputField.Equals(kc.getInputField())) { return; }
         kc.clearText();
         kc.setInputField(inputField);
     }

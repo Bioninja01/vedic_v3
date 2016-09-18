@@ -7,6 +7,7 @@ public class KeyboardController : MonoBehaviour {
     InputField inputField;
     StringBuilder sb = new StringBuilder("");
 
+
     public void setInputField(InputField inputField) {
         this.inputField = inputField;
         StringBuilder sb = new StringBuilder(inputField.text);
@@ -37,4 +38,7 @@ public class KeyboardController : MonoBehaviour {
         sb = new StringBuilder();
     }
 
+    public InputField getInputField() {
+        return inputField;
+    }
 }

@@ -177,12 +177,15 @@
     <Compile Include="Assets\JamesVinson\PlayerMovement.cs" />
     <Compile Include="Assets\JamesVinson\Test_L.cs" />
     <Compile Include="Assets\JamesVinson\UIMove_Tool.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_BasicLogic.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_Col.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_DescToggle.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_InputField.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_MultiInput.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_OrderBy.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_Panel.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_SpawnNode.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_String.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_WhereCon.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\TableController.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_AlterQuery.cs" />
@@ -192,6 +195,7 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_DataFactory.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_DeleteQuery.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_InsertQuery.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_MySql_BasicLogic.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_MySql_Where.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_OrderBy.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_Query.cs" />
@@ -223,7 +227,9 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Number.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Return.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_ReturnBool.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_String.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\Vid_Variable.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\BasicLogic.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\Condition_Type.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\MySql_colTypes.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\enum\Query_Type.cs" />

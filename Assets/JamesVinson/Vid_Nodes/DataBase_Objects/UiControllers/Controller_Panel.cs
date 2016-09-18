@@ -10,10 +10,12 @@ public class Controller_Panel : MonoBehaviour {
         if (t.isOn) {
             transform.SetParent(newParent);
             transform.position = newParent.position;
+            transform.rotation = newParent.rotation;
         }
         else {
             transform.SetParent(oldParent);
             transform.position = oldParent.position;
+            transform.rotation = oldParent.rotation;
         }
     }
 

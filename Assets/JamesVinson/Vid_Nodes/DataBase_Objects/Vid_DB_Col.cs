@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 public class Vid_DB_Col : Vid_Object {
 
@@ -15,7 +16,7 @@ public class Vid_DB_Col : Vid_Object {
     public string asName = "defaultNAME" ;
 
     private bool isSetable = false;
-    public bool NotNull = false;
+    public bool notNull = false;
     public bool asFlag = false;
     public int charvar_Number = 1;
 
@@ -41,7 +42,7 @@ public class Vid_DB_Col : Vid_Object {
                         return obj.ToString() + "." + colName + " As" + asName;
                     }
                     else {
-                        return colName + " As" + asName;
+                        return colName + " As " + asName;
                     }
                 }
                 else {
@@ -58,37 +59,37 @@ public class Vid_DB_Col : Vid_Object {
                 switch (type) {
                     case MySql_colTypes.MYSQL_INT:
                         sb.Append(colName + " int ");
-                        if (NotNull) {
+                        if (notNull) {
                             sb.Append("NOT NULL");
                         }
                         break;
                     case MySql_colTypes.MYSQL_FLOAT:
                         sb.Append(colName + " float ");
-                        if (NotNull) {
+                        if (notNull) {
                             sb.Append("NOT NULL");
                         }
                         break;
                     case MySql_colTypes.MYSQL_DOUBLE:
                         sb.Append(colName + " double ");
-                        if (NotNull) {
+                        if (notNull) {
                             sb.Append("NOT NULL");
                         }
                         break;
                     case MySql_colTypes.MYSQL_TIMESTAMP:
                         sb.Append(colName + " TIMESTAMP  ");
-                        if (NotNull) {
+                        if (notNull) {
                             sb.Append("NOT NULL");
                         }
                         break;
                     case MySql_colTypes.MYSQL_CHAR:
                         sb.Append(colName + " VARCHAR(" + charvar_Number + ")");
-                        if (NotNull) {
+                        if (notNull) {
                             sb.Append("NOT NULL");
                         }
                         break;
                     case MySql_colTypes.MYSQL_BLOB:
                         sb.Append(colName + " BLOB ");
-                        if (NotNull) {
+                        if (notNull) {
                             sb.Append("NOT NULL");
                         }
                         break;
@@ -100,6 +101,10 @@ public class Vid_DB_Col : Vid_Object {
         return "";
     }
 
+    public static explicit operator Vid_DB_Col(string v) {
+        throw new NotImplementedException();
+    }
+
     public override bool addInput(Vid_Object obj, int argumentIndex) {
         if (obj.output_dataType == VidData_Type.DATABASE_TABLE) {
             return base.addInput(obj, argumentIndex);
@@ -108,12 +113,12 @@ public class Vid_DB_Col : Vid_Object {
     }
 
     /*Getters*/
-    public bool isNotNull(){ return NotNull; }
+    public bool isNotNull(){ return notNull; }
     public int getCarVarNumber() { return charvar_Number; }
     public bool getSetable() { return isSetable; }
 
     /*Setters*/
-    public void set_NotNull(bool b){this.NotNull = b; }
+    public void set_NotNull(bool b){this.notNull = b; }
     public void setCarVarNumber(int i) { this.charvar_Number = i; }
     public void setSetable(bool b) {
         this.isSetable = b;
