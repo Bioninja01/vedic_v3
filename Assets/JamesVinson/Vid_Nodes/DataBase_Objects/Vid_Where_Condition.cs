@@ -12,11 +12,10 @@ public class Vid_Where_Condition : Vid_Object {
 
     public override void Awake() {
         inputs = new Vid_ObjectInputs(2);
-        acceptableInputs = new VidData_Type[4];
+        acceptableInputs = new VidData_Type[3];
             acceptableInputs[0] = VidData_Type.DATABASE_COL;
-            acceptableInputs[1] = VidData_Type.DATABASE_TABLE;
-            acceptableInputs[2] = VidData_Type.NUM;
-            acceptableInputs[3] = VidData_Type.STRING;
+            acceptableInputs[1] = VidData_Type.NUM;
+            acceptableInputs[2] = VidData_Type.STRING;
     }
 
     public override string ToString() {
@@ -55,6 +54,7 @@ public class Vid_Where_Condition : Vid_Object {
                     break;
             }
         }
+        sb.AppendLine();
         return sb.ToString();
     }
 

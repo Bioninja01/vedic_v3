@@ -26,11 +26,11 @@ public class Vid_MySql_BasicLogic : Vid_Object {
         else {
             switch (logicType) {
                 case BasicLogic.AND:
-                    sb.Append(inputs.getInput_atIndex(0).ToString());
+                    sb.Append(string.Format("{0," + TabTool.numberOfSpaces() + "}", inputs.getInput_atIndex(0).ToString()));
                     sb.Append(" ADD " + inputs.getInput_atIndex(1).ToString() + " ");
                     break;
                 case BasicLogic.OR:
-                    sb.Append(inputs.getInput_atIndex(0).ToString());
+                    sb.Append(string.Format("{0," + TabTool.numberOfSpaces() + "}", inputs.getInput_atIndex(0).ToString()));
                     sb.Append(" OR " + inputs.getInput_atIndex(1).ToString() + " ");
                     break;
                 default:
@@ -41,21 +41,9 @@ public class Vid_MySql_BasicLogic : Vid_Object {
     }
     /*Builder functions*/
     public override bool addInput(Vid_Object obj, int index) {
-        if (obj.output_dataType == VidData_Type.DATABASE_COL) {
+        if (obj.output_dataType == VidData_Type.BOOL) {
             return base.addInput(obj, index);
         }
-        else {
-            if (obj.output_dataType == VidData_Type.BOOL
-                    || obj.output_dataType == VidData_Type.NUM
-                    || obj.output_dataType == VidData_Type.STRING) {
-                if (index == 1) {
-                    return base.addInput(obj, index);
-                }
-                else {
-                    return false;
-                }
-            }
-            return false;
-        }
+        return false;
     }
 }
