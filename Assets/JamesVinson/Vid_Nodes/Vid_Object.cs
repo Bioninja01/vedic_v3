@@ -17,6 +17,7 @@ public abstract class Vid_Object : MonoBehaviour, Inputable
     public virtual bool removeInput( int argumentIndex) {
         if(inputs != null) {
             return inputs.removeInput_atIndex(argumentIndex);
+            
         }
        return false;
     }

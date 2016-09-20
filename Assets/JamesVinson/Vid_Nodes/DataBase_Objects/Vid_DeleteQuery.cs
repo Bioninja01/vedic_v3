@@ -16,10 +16,10 @@ public class Vid_DeleteQuery : Vid_Query
     public override string ToString() {
         StringBuilder sb = new StringBuilder();
         if (inputs.getInput_atIndex(0) == null) {
-            sb.Append("DELETE FROM error::NoTable SET ");
+            sb.Append("DELETE FROM error::NoTable ");
         }
         else {
-            sb.Append("DELETE FROM " + inputs.getInput_atIndex(0).ToString());
+            sb.Append("DELETE FROM " + inputs.getInput_atIndex(0).ToString() +" ");
         }
         if (inputs.getInput_atIndex(1) != null) {
             sb.Append(inputs.getInput_atIndex(1).ToString());

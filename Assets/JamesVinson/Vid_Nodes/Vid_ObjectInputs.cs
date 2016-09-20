@@ -38,7 +38,10 @@ public class Vid_ObjectInputs {
   
     /*Setters*/
     public bool setInput_atIndex(Vid_Object obj, int index) {
-        if (inputs == null) { return false; }
+
+        if (inputs == null) {
+            return false;
+        }
         if ((index > -1) && (index < maxsize)) {
             inputs[index] = obj;
             return true;

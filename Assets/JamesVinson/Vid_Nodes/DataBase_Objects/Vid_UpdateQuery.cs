@@ -10,10 +10,10 @@ public class Vid_UpdateQuery : Vid_Query
     public override void Awake() {
         base.Awake();
         base.output_dataType = VidData_Type.DATABASE_TABLE;
-        inputs = new Vid_ObjectInputs(2);
+        inputs = new Vid_ObjectInputs(3);
         acceptableInputs = new VidData_Type[3];
             acceptableInputs[0] = VidData_Type.DATABASE_TABLE;
-            acceptableInputs[1] = VidData_Type.DATABASE_COL;
+            acceptableInputs[1] = VidData_Type.BOOL;
             acceptableInputs[2] = VidData_Type.DATABASE_CALUSE;
     }
 
@@ -31,7 +31,6 @@ public class Vid_UpdateQuery : Vid_Query
         if (inputs.getInput_atIndex(2) != null) {
             sb.Append(inputs.getInput_atIndex(2).ToString());
         }
-        sb.Append(";");
         return sb.ToString();
     }
 
@@ -47,7 +46,7 @@ public class Vid_UpdateQuery : Vid_Query
                     return false;
                 }
             case 1:
-                if (obj.output_dataType == VidData_Type.DATABASE_COL) {
+                if (obj.output_dataType == VidData_Type.BOOL) {
                     bool b = base.addInput(obj, 1);
                     return b;
                 }
