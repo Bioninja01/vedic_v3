@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System;
-using System.Text;
+﻿using System.Text;
 
 public class Vid_SelectQuery : Vid_Query
 {
@@ -17,7 +13,7 @@ public class Vid_SelectQuery : Vid_Query
 
     public override void Awake() {
         base.Awake();
-        base.output_dataType = VidData_Type.DATABASE_TABLE;
+        base.output_dataType = VidData_Type.LIST;
         inputs = new Vid_ObjectInputs(3);
         acceptableInputs = new VidData_Type[3];
             acceptableInputs[0] = VidData_Type.DATABASE_TABLE;
@@ -26,23 +22,27 @@ public class Vid_SelectQuery : Vid_Query
     }
 
     public override string ToString() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("");
         if (inputs.getInput_atIndex(1) == null) {
-            sb.Append("SELECT * ");
+            sb.AppendLine(string.Format("{0," + TabTool.numberOfSpaces() + "}","SELECT *"));
         }
         else {
-            sb.Append("SELECT " + inputs.getInput_atIndex(1).ToString() + " ");
+            sb.AppendLine(string.Format("{0," + TabTool.numberOfSpaces() + "}", 
+                                            "SELECT " + inputs.getInput_atIndex(1).ToString()));
         }
         if (inputs.getInput_atIndex(0) == null) {
-            sb.Append("FROM error::NoTable ");
+            sb.Append(string.Format("{0," + TabTool.numberOfSpaces() + "}", 
+                                        "FROM error:NoT"));
         }
         else {
-            sb.Append("FROM " + inputs.getInput_atIndex(0).ToString() + " ");
+            sb.Append(string.Format("{0," + TabTool.numberOfSpaces() + "}",
+                                        "FROM " + inputs.getInput_atIndex(0).ToString()));
         }
         if (inputs.getInput_atIndex(2) != null) {
-            sb.Append(inputs.getInput_atIndex(2).ToString() + " ");
+            sb.AppendLine();
+            sb.Append(string.Format("{0," + TabTool.numberOfSpaces() + "}",
+                                       inputs.getInput_atIndex(2).ToString()));
         }
-        sb.Append(" ;");
         return sb.ToString();
     }
 

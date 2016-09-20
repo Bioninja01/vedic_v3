@@ -7,6 +7,7 @@ public enum  VidData_Type {
     DATABASE_TABLE,
     DATABASE_CALUSE,
     DATABASE_QUERY,
+    LIST,
     BOOL,
     NUM,
     STRING,

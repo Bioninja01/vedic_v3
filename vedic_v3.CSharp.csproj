@@ -66,6 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\JamesVinson\AllimentTest_DeleteIT.cs" />
     <Compile Include="Assets\JamesVinson\ButtonSwitchText.cs" />
     <Compile Include="Assets\JamesVinson\JamesV_LeapRTS.cs" />
     <Compile Include="Assets\JamesVinson\LeapMotion\LeapScripts\Algorithms\SlidingMax.cs" />
@@ -182,10 +183,12 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_DescToggle.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_InputField.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_MultiInput.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_MultiInput_UI.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_OrderBy.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_Panel.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_SpawnNode.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_String.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_Table.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\Controller_WhereCon.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\UiControllers\TableController.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\DataBase_Objects\Vid_AlterQuery.cs" />
@@ -211,6 +214,7 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\ConnectionTool.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\FunctionTool.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\InputBroker.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\TabTool.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\Vid_Tools\Vid_TokenFactory.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\GrammerNodes\Vid_Block.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\codeGeneration\GrammerNodes\Vid_DeclarationConst.cs" />
@@ -241,6 +245,7 @@
     <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Inputable.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Resizeable.cs" />
     <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\Stringifyable.cs" />
+    <Compile Include="Assets\JamesVinson\Vid_Nodes\interface\SubdataType.cs" />
     <Compile Include="Assets\RunBash.cs" />
   </ItemGroup>
   <ItemGroup>

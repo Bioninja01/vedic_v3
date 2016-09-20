@@ -46,7 +46,12 @@ public class Vid_DB_Col : Vid_Object {
                     }
                 }
                 else {
-                    return colName;
+                    if (obj != null) {
+                        return obj.ToString() + "." + colName;
+                    }
+                    else {
+                        return colName;
+                    }
                 }
             case ColState.EXPRESSION:
                 if (obj != null) {

@@ -11,6 +11,7 @@ public class Vid_MultiInput : Vid_Object {
         output_dataType = VidData_Type.NUM;
     }
 
+
     public override void Awake() {
         base.Awake();
         acceptableInputs = new VidData_Type[1];
@@ -24,7 +25,10 @@ public class Vid_MultiInput : Vid_Object {
 
     /*Builder functions*/
     public override bool addInput(Vid_Object obj, int index) {
-        if (obj.output_dataType == output_dataType) {
+        if (output_dataType == VidData_Type.LIST) {
+            return base.addInput(obj, index);
+        }
+        else if (obj.output_dataType == output_dataType) {
             return base.addInput(obj, index);
         }
         return false;
